@@ -29,7 +29,7 @@ Movie * new_movie(void) {
 }
 
 
-Movie * getAllMovies ()
+Movie * get_all_movies ()
 {
     Movie * allMovies = (Movie *) malloc(sizeof(Movie) * NUM_MOVIES);
         //Terminator
@@ -119,7 +119,7 @@ Movie * getAllMovies ()
     
 }
 
-void freeVector (Movie * allMovies[])
+void freev_ector_movies (Movie * allMovies[])
 {
     for (int i = 0; i < NUM_MOVIES; i ++) {
         free_movie(allMovies[i]);

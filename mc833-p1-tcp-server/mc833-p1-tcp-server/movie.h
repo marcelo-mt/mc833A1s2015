@@ -38,5 +38,18 @@ void print_movie(Movie *movie);
 char * movie_genre_string(MovieGenre genre);
 void free_movie(Movie *movie);
 
+/*
+ This method create an array with 6 movies
+ 
+ author: Bruno Vargas
+ */
+Movie * get_all_movies ();
+
+/*
+ This method deallocate all moview contained by allMoview vector
+ 
+ author: Bruno Vargas
+ */
+void free_vector_movies (Movie * allMovies[]);
 
 #endif /* defined(__mc833_p1_tcp_server__movie__) */
