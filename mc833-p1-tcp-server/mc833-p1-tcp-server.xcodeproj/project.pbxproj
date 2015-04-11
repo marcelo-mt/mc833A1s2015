@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2C6CB23D1AC8829800CBBE5F /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 2C6CB23C1AC8829800CBBE5F /* main.c */; };
 		2CAE0A1B1AC883B6005E313F /* movie.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CAE0A191AC883B6005E313F /* movie.c */; };
+		F9CB110B1AD9B255000939AF /* serverExample.c in Sources */ = {isa = PBXBuildFile; fileRef = F9CB110A1AD9B255000939AF /* serverExample.c */; };
+		F9CB110D1AD9B274000939AF /* userExample.c in Sources */ = {isa = PBXBuildFile; fileRef = F9CB110C1AD9B274000939AF /* userExample.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +30,8 @@
 		2C6CB23C1AC8829800CBBE5F /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		2CAE0A191AC883B6005E313F /* movie.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = movie.c; sourceTree = "<group>"; };
 		2CAE0A1A1AC883B6005E313F /* movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = movie.h; sourceTree = "<group>"; };
+		F9CB110A1AD9B255000939AF /* serverExample.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = serverExample.c; sourceTree = "<group>"; };
+		F9CB110C1AD9B274000939AF /* userExample.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = userExample.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				2C6CB23C1AC8829800CBBE5F /* main.c */,
 				2CAE0A191AC883B6005E313F /* movie.c */,
 				2CAE0A1A1AC883B6005E313F /* movie.h */,
+				F9CB110A1AD9B255000939AF /* serverExample.c */,
+				F9CB110C1AD9B274000939AF /* userExample.c */,
 			);
 			path = "mc833-p1-tcp-server";
 			sourceTree = "<group>";
@@ -124,7 +130,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CAE0A1B1AC883B6005E313F /* movie.c in Sources */,
+				F9CB110D1AD9B274000939AF /* userExample.c in Sources */,
 				2C6CB23D1AC8829800CBBE5F /* main.c in Sources */,
+				F9CB110B1AD9B255000939AF /* serverExample.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
