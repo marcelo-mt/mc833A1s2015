@@ -44,7 +44,9 @@ int main(int argc, char *argv[])
         printf("\n Error : Connect Failed \n");
         return 1;
     }
-    
+   /*
+    Nesse buffer acredito que fico lendo o que vem e assim que o que vem é zero, sei que acabou de receber o pacote que estou esperando!
+   */ 
     while ( (n = read(sockfd, recvBuff, sizeof(recvBuff)-1)) > 0)
     {
         recvBuff[n] = 0;
