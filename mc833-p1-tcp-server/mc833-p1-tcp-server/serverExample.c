@@ -8,6 +8,7 @@
 #include <string.h>
 #include <sys/types.h>
 #include <time.h>
+#include "movie.h"
 
 int main(int argc, char *argv[])
 {
