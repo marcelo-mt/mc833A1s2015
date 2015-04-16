@@ -9,6 +9,7 @@
 #include <errno.h>
 #include <arpa/inet.h>
 
+#warning para rodar o cliente colocar o ip do server 
 int main(int argc, char *argv[])
 {
     int sockfd = 0, n = 0;
