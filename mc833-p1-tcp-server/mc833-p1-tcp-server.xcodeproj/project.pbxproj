@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		2C6CB23D1AC8829800CBBE5F /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 2C6CB23C1AC8829800CBBE5F /* main.c */; };
 		2CAE0A1B1AC883B6005E313F /* movie.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CAE0A191AC883B6005E313F /* movie.c */; };
+		2CCFD24E1AE6E25E004AF3E9 /* movietcpsrv.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD24D1AE6E25E004AF3E9 /* movietcpsrv.c */; };
+		2CCFD2501AE6E388004AF3E9 /* movietcpcli.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD24F1AE6E388004AF3E9 /* movietcpcli.c */; };
+		2CCFD2531AE6E69A004AF3E9 /* error.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD2521AE6E69A004AF3E9 /* error.c */; };
+		2CCFD2551AE6E88C004AF3E9 /* wrapsock.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD2541AE6E88C004AF3E9 /* wrapsock.c */; };
+		2CCFD2571AE6E944004AF3E9 /* wrappthread.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD2561AE6E944004AF3E9 /* wrappthread.c */; };
+		2CCFD2591AE6EEC0004AF3E9 /* wrapunix.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD2581AE6EEC0004AF3E9 /* wrapunix.c */; };
 		F9CB110B1AD9B255000939AF /* serverExample.c in Sources */ = {isa = PBXBuildFile; fileRef = F9CB110A1AD9B255000939AF /* serverExample.c */; };
 		F9CB110D1AD9B274000939AF /* userExample.c in Sources */ = {isa = PBXBuildFile; fileRef = F9CB110C1AD9B274000939AF /* userExample.c */; };
 /* End PBXBuildFile section */
@@ -30,6 +36,13 @@
 		2C6CB23C1AC8829800CBBE5F /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		2CAE0A191AC883B6005E313F /* movie.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = movie.c; sourceTree = "<group>"; };
 		2CAE0A1A1AC883B6005E313F /* movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = movie.h; sourceTree = "<group>"; };
+		2CCFD24C1AE6E1DD004AF3E9 /* commonheader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = commonheader.h; sourceTree = "<group>"; };
+		2CCFD24D1AE6E25E004AF3E9 /* movietcpsrv.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = movietcpsrv.c; sourceTree = "<group>"; };
+		2CCFD24F1AE6E388004AF3E9 /* movietcpcli.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = movietcpcli.c; sourceTree = "<group>"; };
+		2CCFD2521AE6E69A004AF3E9 /* error.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = error.c; sourceTree = "<group>"; };
+		2CCFD2541AE6E88C004AF3E9 /* wrapsock.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wrapsock.c; sourceTree = "<group>"; };
+		2CCFD2561AE6E944004AF3E9 /* wrappthread.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wrappthread.c; sourceTree = "<group>"; };
+		2CCFD2581AE6EEC0004AF3E9 /* wrapunix.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wrapunix.c; sourceTree = "<group>"; };
 		F9CB110A1AD9B255000939AF /* serverExample.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = serverExample.c; sourceTree = "<group>"; };
 		F9CB110C1AD9B274000939AF /* userExample.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = userExample.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,13 +77,52 @@
 		2C6CB23B1AC8829800CBBE5F /* mc833-p1-tcp-server */ = {
 			isa = PBXGroup;
 			children = (
+				2CCFD25D1AE6EEF5004AF3E9 /* tcp */,
+				2CCFD25C1AE6EEE1004AF3E9 /* Movie */,
+				2CCFD25B1AE6EED6004AF3E9 /* lib */,
+				2CCFD25A1AE6EECA004AF3E9 /* Wrappers */,
 				2C6CB23C1AC8829800CBBE5F /* main.c */,
-				2CAE0A191AC883B6005E313F /* movie.c */,
-				2CAE0A1A1AC883B6005E313F /* movie.h */,
 				F9CB110A1AD9B255000939AF /* serverExample.c */,
 				F9CB110C1AD9B274000939AF /* userExample.c */,
 			);
 			path = "mc833-p1-tcp-server";
+			sourceTree = "<group>";
+		};
+		2CCFD25A1AE6EECA004AF3E9 /* Wrappers */ = {
+			isa = PBXGroup;
+			children = (
+				2CCFD2581AE6EEC0004AF3E9 /* wrapunix.c */,
+				2CCFD2561AE6E944004AF3E9 /* wrappthread.c */,
+				2CCFD2541AE6E88C004AF3E9 /* wrapsock.c */,
+			);
+			name = Wrappers;
+			sourceTree = "<group>";
+		};
+		2CCFD25B1AE6EED6004AF3E9 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				2CCFD24C1AE6E1DD004AF3E9 /* commonheader.h */,
+				2CCFD2521AE6E69A004AF3E9 /* error.c */,
+			);
+			name = lib;
+			sourceTree = "<group>";
+		};
+		2CCFD25C1AE6EEE1004AF3E9 /* Movie */ = {
+			isa = PBXGroup;
+			children = (
+				2CAE0A1A1AC883B6005E313F /* movie.h */,
+				2CAE0A191AC883B6005E313F /* movie.c */,
+			);
+			name = Movie;
+			sourceTree = "<group>";
+		};
+		2CCFD25D1AE6EEF5004AF3E9 /* tcp */ = {
+			isa = PBXGroup;
+			children = (
+				2CCFD24D1AE6E25E004AF3E9 /* movietcpsrv.c */,
+				2CCFD24F1AE6E388004AF3E9 /* movietcpcli.c */,
+			);
+			name = tcp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,9 +182,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CAE0A1B1AC883B6005E313F /* movie.c in Sources */,
+				2CCFD2591AE6EEC0004AF3E9 /* wrapunix.c in Sources */,
 				F9CB110D1AD9B274000939AF /* userExample.c in Sources */,
+				2CCFD2571AE6E944004AF3E9 /* wrappthread.c in Sources */,
 				2C6CB23D1AC8829800CBBE5F /* main.c in Sources */,
+				2CCFD2531AE6E69A004AF3E9 /* error.c in Sources */,
+				2CCFD2501AE6E388004AF3E9 /* movietcpcli.c in Sources */,
+				2CCFD2551AE6E88C004AF3E9 /* wrapsock.c in Sources */,
 				F9CB110B1AD9B255000939AF /* serverExample.c in Sources */,
+				2CCFD24E1AE6E25E004AF3E9 /* movietcpsrv.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
