@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
     
     char sendBuff[1025];
     time_t ticks;
-    
+    printf("serv_addr %d", serv_addr);
     listenfd = socket(AF_INET, SOCK_STREAM, 0);
     memset(&serv_addr, '0', sizeof(serv_addr));
     memset(sendBuff, '0', sizeof(sendBuff));
@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
         connfd = accept(listenfd, (struct sockaddr*)NULL, NULL);
         
         ticks = time(NULL);
-        snprintf(sendBuff, sizeof(sendBuff), "%.24s\r\n", ctime(&ticks));
+        snprintf(sendBuff, sizeof(sendBuff), "Bruno %.24s\r\n", ctime(&ticks));
         write(connfd, sendBuff, strlen(sendBuff));
         
         close(connfd);
