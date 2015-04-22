@@ -24,6 +24,8 @@
 		2CCFD2721AE7423B004AF3E9 /* str_echo.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD2711AE7423B004AF3E9 /* str_echo.c */; };
 		2CCFD2741AE74344004AF3E9 /* str_cli.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD2731AE74344004AF3E9 /* str_cli.c */; };
 		2CCFD2761AE74419004AF3E9 /* wrapstdio.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD2751AE74419004AF3E9 /* wrapstdio.c */; };
+		2CCFD2781AE74B32004AF3E9 /* signal.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD2771AE74B32004AF3E9 /* signal.c */; };
+		2CCFD27C1AE74F8B004AF3E9 /* sigchldwaitpid.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD27B1AE74F8B004AF3E9 /* sigchldwaitpid.c */; };
 		F9CB110B1AD9B255000939AF /* serverExample.c in Sources */ = {isa = PBXBuildFile; fileRef = F9CB110A1AD9B255000939AF /* serverExample.c */; };
 		F9CB110D1AD9B274000939AF /* userExample.c in Sources */ = {isa = PBXBuildFile; fileRef = F9CB110C1AD9B274000939AF /* userExample.c */; };
 /* End PBXBuildFile section */
@@ -62,6 +64,8 @@
 		2CCFD2711AE7423B004AF3E9 /* str_echo.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = str_echo.c; sourceTree = "<group>"; };
 		2CCFD2731AE74344004AF3E9 /* str_cli.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = str_cli.c; sourceTree = "<group>"; };
 		2CCFD2751AE74419004AF3E9 /* wrapstdio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wrapstdio.c; sourceTree = "<group>"; };
+		2CCFD2771AE74B32004AF3E9 /* signal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = signal.c; sourceTree = "<group>"; };
+		2CCFD27B1AE74F8B004AF3E9 /* sigchldwaitpid.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sigchldwaitpid.c; sourceTree = "<group>"; };
 		F9CB110A1AD9B255000939AF /* serverExample.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = serverExample.c; sourceTree = "<group>"; };
 		F9CB110C1AD9B274000939AF /* userExample.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = userExample.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,6 +114,7 @@
 		2CCFD25B1AE6EED6004AF3E9 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				2CCFD2771AE74B32004AF3E9 /* signal.c */,
 				2CCFD2731AE74344004AF3E9 /* str_cli.c */,
 				2CCFD2711AE7423B004AF3E9 /* str_echo.c */,
 				2CCFD26F1AE73347004AF3E9 /* inet_aton.c */,
@@ -140,6 +145,7 @@
 		2CCFD25D1AE6EEF5004AF3E9 /* tcp */ = {
 			isa = PBXGroup;
 			children = (
+				2CCFD27B1AE74F8B004AF3E9 /* sigchldwaitpid.c */,
 				2CCFD24D1AE6E25E004AF3E9 /* movietcpsrv.c */,
 				2CCFD24F1AE6E388004AF3E9 /* movietcpcli.c */,
 			);
@@ -209,10 +215,12 @@
 				2C6CB23D1AC8829800CBBE5F /* main.c in Sources */,
 				2CCFD2531AE6E69A004AF3E9 /* error.c in Sources */,
 				2CCFD2501AE6E388004AF3E9 /* movietcpcli.c in Sources */,
+				2CCFD27C1AE74F8B004AF3E9 /* sigchldwaitpid.c in Sources */,
 				2CCFD2761AE74419004AF3E9 /* wrapstdio.c in Sources */,
 				2CCFD2681AE72B00004AF3E9 /* readn.c in Sources */,
 				2CCFD2661AE72AEC004AF3E9 /* readline.c in Sources */,
 				2CCFD2641AE72ABF004AF3E9 /* writen.c in Sources */,
+				2CCFD2781AE74B32004AF3E9 /* signal.c in Sources */,
 				2CCFD2741AE74344004AF3E9 /* str_cli.c in Sources */,
 				2CCFD2551AE6E88C004AF3E9 /* wrapsock.c in Sources */,
 				F9CB110B1AD9B255000939AF /* serverExample.c in Sources */,

@@ -16,6 +16,7 @@ int main(int argc, char **argv)
     pid_t				childpid;
     socklen_t			clilen;
     struct sockaddr_in	cliaddr, servaddr;
+    void				sig_chld(int);
     
     listenfd = Socket(AF_INET, SOCK_STREAM, 0);
     
@@ -28,9 +29,16 @@ int main(int argc, char **argv)
     
     Listen(listenfd, LISTENQ);
     
+    Signal(SIGCHLD, sig_chld);	/* must call waitpid() */
+    
     for ( ; ; ) {
         clilen = sizeof(cliaddr);
-        connfd = Accept(listenfd, (SA *) &cliaddr, &clilen);
+        if ( (connfd = accept(listenfd, (SA *) &cliaddr, &clilen)) < 0) {
+            if (errno == EINTR)
+                continue;		/* back to for() */
+            else
+                err_sys("accept error");
+        }
         
         if ( (childpid = Fork()) == 0) {	/* child process */
             Close(listenfd);	/* close listening socket */

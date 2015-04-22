@@ -52,10 +52,16 @@
 #define	SERV_PORT		 9877			/* TCP and UDP client-servers */
 #define	SERV_PORT_STR	"9877"			/* TCP and UDP client-servers */
 
+typedef	void	Sigfunc(int);	/* for signal handlers */
+
+#define	min(a,b)	((a) < (b) ? (a) : (b))
+#define	max(a,b)	((a) > (b) ? (a) : (b))
+
 /* Following shortens all the type casts of pointer arguments */
 #define	SA	struct sockaddr
 
 /* prototypes for our own library functions */
+Sigfunc *signal_intr(int, Sigfunc *);
 void	 str_echo(int);
 void	 str_cli(FILE *, int);
 
@@ -81,8 +87,8 @@ ssize_t	 Read_fd(int, void *, size_t, int *);
 int		 Readable_timeo(int, int);
 ssize_t	 Recvfrom_flags(int, void *, size_t, int *, SA *, socklen_t *,
                         struct in_pktinfo *);
-//Sigfunc *Signal(int, Sigfunc *);
-//Sigfunc *Signal_intr(int, Sigfunc *);
+Sigfunc *Signal(int, Sigfunc *);
+Sigfunc *Signal_intr(int, Sigfunc *);
 int		 Sock_bind_wild(int, int);
 char	*Sock_ntop(const SA *, socklen_t);
 char	*Sock_ntop_host(const SA *, socklen_t);
