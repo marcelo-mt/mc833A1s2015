@@ -14,6 +14,13 @@
 		2CCFD2531AE6E69A004AF3E9 /* error.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD2521AE6E69A004AF3E9 /* error.c */; };
 		2CCFD2551AE6E88C004AF3E9 /* wrapsock.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD2541AE6E88C004AF3E9 /* wrapsock.c */; };
 		2CCFD2591AE6EEC0004AF3E9 /* wrapunix.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD2581AE6EEC0004AF3E9 /* wrapunix.c */; };
+		2CCFD2641AE72ABF004AF3E9 /* writen.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD2631AE72ABF004AF3E9 /* writen.c */; };
+		2CCFD2661AE72AEC004AF3E9 /* readline.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD2651AE72AEC004AF3E9 /* readline.c */; };
+		2CCFD2681AE72B00004AF3E9 /* readn.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD2671AE72B00004AF3E9 /* readn.c */; };
+		2CCFD26A1AE73148004AF3E9 /* wraplib.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD2691AE73148004AF3E9 /* wraplib.c */; };
+		2CCFD26D1AE731E2004AF3E9 /* inet_ntop_ipv4.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD26B1AE731E2004AF3E9 /* inet_ntop_ipv4.c */; };
+		2CCFD26E1AE731E2004AF3E9 /* inet_pton_ipv4.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD26C1AE731E2004AF3E9 /* inet_pton_ipv4.c */; };
+		2CCFD2701AE73347004AF3E9 /* inet_aton.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD26F1AE73347004AF3E9 /* inet_aton.c */; };
 		F9CB110B1AD9B255000939AF /* serverExample.c in Sources */ = {isa = PBXBuildFile; fileRef = F9CB110A1AD9B255000939AF /* serverExample.c */; };
 		F9CB110D1AD9B274000939AF /* userExample.c in Sources */ = {isa = PBXBuildFile; fileRef = F9CB110C1AD9B274000939AF /* userExample.c */; };
 /* End PBXBuildFile section */
@@ -42,6 +49,13 @@
 		2CCFD2541AE6E88C004AF3E9 /* wrapsock.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wrapsock.c; sourceTree = "<group>"; };
 		2CCFD2581AE6EEC0004AF3E9 /* wrapunix.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wrapunix.c; sourceTree = "<group>"; };
 		2CCFD2621AE71C1E004AF3E9 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		2CCFD2631AE72ABF004AF3E9 /* writen.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = writen.c; sourceTree = "<group>"; };
+		2CCFD2651AE72AEC004AF3E9 /* readline.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = readline.c; sourceTree = "<group>"; };
+		2CCFD2671AE72B00004AF3E9 /* readn.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = readn.c; sourceTree = "<group>"; };
+		2CCFD2691AE73148004AF3E9 /* wraplib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wraplib.c; sourceTree = "<group>"; };
+		2CCFD26B1AE731E2004AF3E9 /* inet_ntop_ipv4.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = inet_ntop_ipv4.c; sourceTree = "<group>"; };
+		2CCFD26C1AE731E2004AF3E9 /* inet_pton_ipv4.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = inet_pton_ipv4.c; sourceTree = "<group>"; };
+		2CCFD26F1AE73347004AF3E9 /* inet_aton.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = inet_aton.c; sourceTree = "<group>"; };
 		F9CB110A1AD9B255000939AF /* serverExample.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = serverExample.c; sourceTree = "<group>"; };
 		F9CB110C1AD9B274000939AF /* userExample.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = userExample.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,7 +94,6 @@
 				2CCFD25D1AE6EEF5004AF3E9 /* tcp */,
 				2CCFD25C1AE6EEE1004AF3E9 /* Movie */,
 				2CCFD25B1AE6EED6004AF3E9 /* lib */,
-				2CCFD25A1AE6EECA004AF3E9 /* Wrappers */,
 				2C6CB23C1AC8829800CBBE5F /* main.c */,
 				F9CB110A1AD9B255000939AF /* serverExample.c */,
 				F9CB110C1AD9B274000939AF /* userExample.c */,
@@ -88,18 +101,18 @@
 			path = "mc833-p1-tcp-server";
 			sourceTree = "<group>";
 		};
-		2CCFD25A1AE6EECA004AF3E9 /* Wrappers */ = {
-			isa = PBXGroup;
-			children = (
-				2CCFD2581AE6EEC0004AF3E9 /* wrapunix.c */,
-				2CCFD2541AE6E88C004AF3E9 /* wrapsock.c */,
-			);
-			name = Wrappers;
-			sourceTree = "<group>";
-		};
 		2CCFD25B1AE6EED6004AF3E9 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				2CCFD26F1AE73347004AF3E9 /* inet_aton.c */,
+				2CCFD26B1AE731E2004AF3E9 /* inet_ntop_ipv4.c */,
+				2CCFD26C1AE731E2004AF3E9 /* inet_pton_ipv4.c */,
+				2CCFD2691AE73148004AF3E9 /* wraplib.c */,
+				2CCFD2671AE72B00004AF3E9 /* readn.c */,
+				2CCFD2631AE72ABF004AF3E9 /* writen.c */,
+				2CCFD2651AE72AEC004AF3E9 /* readline.c */,
+				2CCFD2581AE6EEC0004AF3E9 /* wrapunix.c */,
+				2CCFD2541AE6E88C004AF3E9 /* wrapsock.c */,
 				2CCFD24C1AE6E1DD004AF3E9 /* commonheader.h */,
 				2CCFD2521AE6E69A004AF3E9 /* error.c */,
 			);
@@ -183,12 +196,19 @@
 				2CAE0A1B1AC883B6005E313F /* movie.c in Sources */,
 				2CCFD2591AE6EEC0004AF3E9 /* wrapunix.c in Sources */,
 				F9CB110D1AD9B274000939AF /* userExample.c in Sources */,
+				2CCFD26A1AE73148004AF3E9 /* wraplib.c in Sources */,
 				2C6CB23D1AC8829800CBBE5F /* main.c in Sources */,
 				2CCFD2531AE6E69A004AF3E9 /* error.c in Sources */,
 				2CCFD2501AE6E388004AF3E9 /* movietcpcli.c in Sources */,
+				2CCFD2681AE72B00004AF3E9 /* readn.c in Sources */,
+				2CCFD2661AE72AEC004AF3E9 /* readline.c in Sources */,
+				2CCFD2641AE72ABF004AF3E9 /* writen.c in Sources */,
 				2CCFD2551AE6E88C004AF3E9 /* wrapsock.c in Sources */,
 				F9CB110B1AD9B255000939AF /* serverExample.c in Sources */,
 				2CCFD24E1AE6E25E004AF3E9 /* movietcpsrv.c in Sources */,
+				2CCFD2701AE73347004AF3E9 /* inet_aton.c in Sources */,
+				2CCFD26D1AE731E2004AF3E9 /* inet_ntop_ipv4.c in Sources */,
+				2CCFD26E1AE731E2004AF3E9 /* inet_pton_ipv4.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
