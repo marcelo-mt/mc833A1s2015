@@ -45,10 +45,19 @@
 
 /* Miscellaneous constants */
 #define	MAXLINE		4096	/* max text line length */
+#define	MAXSOCKADDR  128	/* max socket address structure size */
+#define	BUFFSIZE	8192	/* buffer size for reads and writes */
+
+/* Define some port number that can be used for client-servers */
+#define	SERV_PORT		 9877			/* TCP and UDP client-servers */
+#define	SERV_PORT_STR	"9877"			/* TCP and UDP client-servers */
 
 /* Following shortens all the type casts of pointer arguments */
 #define	SA	struct sockaddr
 
+/* prototypes for our own library functions */
+void	 str_echo(int);
+void	 str_cli(FILE *, int);
 
 #ifndef	HAVE_INET_PTON_PROTO
 int			 inet_pton(int, const char *, void *);
@@ -115,6 +124,13 @@ void	 Unlink(const char *);
 pid_t	 Wait(int *);
 pid_t	 Waitpid(pid_t, int *, int);
 void	 Write(int, void *, size_t);
+
+/* prototypes for our stdio wrapper functions: see {Sec errors} */
+void	 Fclose(FILE *);
+FILE	*Fdopen(int, const char *);
+char	*Fgets(char *, int, FILE *);
+FILE	*Fopen(const char *, const char *);
+void	 Fputs(const char *, FILE *);
 
 /* prototypes for our socket wrapper functions: see {Sec errors} */
 int		 Accept(int, SA *, socklen_t *);
