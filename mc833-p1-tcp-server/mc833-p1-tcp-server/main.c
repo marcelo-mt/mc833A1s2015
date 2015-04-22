@@ -28,8 +28,6 @@ void allTitlesAndDates ()
     }
     while (!feof(file)) {
         char a[BUFF_SIZE];
-        int aux;
-        float auxFloat;
         
         fgets(a, sizeof(a), file);
         printf("movie = %s",a);
@@ -157,7 +155,6 @@ void allInfo ()
         }
         snprintf(c, sizeof (c), "%ssynopsis.txt", a);
         
-        puts(c);
         if ((file2 = fopen(c, "r")) == NULL) {
             printf("nao foi possivel abrir o arquivo: %s\n",c);
         } else {
@@ -176,6 +173,24 @@ void allInfo ()
     }
         fclose(file);
 }
+
+void synopsisOfMovie (int id)
+{
+    char movie[BUFF_SIZE];
+    FILE * file;
+    
+    snprintf(movie, sizeof (movie), "%dsynopsis.txt", id);
+    if ((file = fopen(movie, "r")) == NULL) {
+        printf("nao foi possivel abrir o arquivo: %s\n",movie);
+    } else {
+        while (!feof(file)) {
+            fgets(movie, sizeof(movie), file);
+            puts(movie);
+        }
+    }
+
+}
+
 int main(int argc, const char * argv[]) {
     
 //    Movie *movie = new_movie();
@@ -207,7 +222,7 @@ int main(int argc, const char * argv[]) {
 //    fclose(file);
 //    allTitlesAndDates();
 //    printf ("%d",numOfMoviewWithId(1));
-    printf("Main");
-    allInfo();
+//allInfo();
+    synopsisOfMovie (1);
     return 0;
 }
