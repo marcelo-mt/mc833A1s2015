@@ -92,3 +92,5 @@ xcuserdata
 ####
 # C
 *.o
+tcpclient
+tcpserver

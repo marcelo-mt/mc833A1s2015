@@ -49,8 +49,8 @@
 #define	BUFFSIZE	8192	/* buffer size for reads and writes */
 
 /* Define some port number that can be used for client-servers */
-#define	SERV_PORT		 9877			/* TCP and UDP client-servers */
-#define	SERV_PORT_STR	"9877"			/* TCP and UDP client-servers */
+#define	SERV_PORT		 9878			/* TCP and UDP client-servers */
+#define	SERV_PORT_STR	"9878"			/* TCP and UDP client-servers */
 
 typedef	void	Sigfunc(int);	/* for signal handlers */
 

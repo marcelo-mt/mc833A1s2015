@@ -26,6 +26,7 @@
 		2CCFD2761AE74419004AF3E9 /* wrapstdio.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD2751AE74419004AF3E9 /* wrapstdio.c */; };
 		2CCFD2781AE74B32004AF3E9 /* signal.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD2771AE74B32004AF3E9 /* signal.c */; };
 		2CCFD27C1AE74F8B004AF3E9 /* sigchldwaitpid.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD27B1AE74F8B004AF3E9 /* sigchldwaitpid.c */; };
+		2CCFD27F1AE77198004AF3E9 /* movie_rental.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD27D1AE77198004AF3E9 /* movie_rental.c */; };
 		F9CB110B1AD9B255000939AF /* serverExample.c in Sources */ = {isa = PBXBuildFile; fileRef = F9CB110A1AD9B255000939AF /* serverExample.c */; };
 		F9CB110D1AD9B274000939AF /* userExample.c in Sources */ = {isa = PBXBuildFile; fileRef = F9CB110C1AD9B274000939AF /* userExample.c */; };
 /* End PBXBuildFile section */
@@ -66,6 +67,8 @@
 		2CCFD2751AE74419004AF3E9 /* wrapstdio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wrapstdio.c; sourceTree = "<group>"; };
 		2CCFD2771AE74B32004AF3E9 /* signal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = signal.c; sourceTree = "<group>"; };
 		2CCFD27B1AE74F8B004AF3E9 /* sigchldwaitpid.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sigchldwaitpid.c; sourceTree = "<group>"; };
+		2CCFD27D1AE77198004AF3E9 /* movie_rental.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = movie_rental.c; sourceTree = "<group>"; };
+		2CCFD27E1AE77198004AF3E9 /* movie_rental.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = movie_rental.h; sourceTree = "<group>"; };
 		F9CB110A1AD9B255000939AF /* serverExample.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = serverExample.c; sourceTree = "<group>"; };
 		F9CB110C1AD9B274000939AF /* userExample.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = userExample.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,21 +117,20 @@
 		2CCFD25B1AE6EED6004AF3E9 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				2CCFD24C1AE6E1DD004AF3E9 /* commonheader.h */,
+				2CCFD2521AE6E69A004AF3E9 /* error.c */,
 				2CCFD2771AE74B32004AF3E9 /* signal.c */,
-				2CCFD2731AE74344004AF3E9 /* str_cli.c */,
-				2CCFD2711AE7423B004AF3E9 /* str_echo.c */,
+				2CCFD27B1AE74F8B004AF3E9 /* sigchldwaitpid.c */,
 				2CCFD26F1AE73347004AF3E9 /* inet_aton.c */,
 				2CCFD26B1AE731E2004AF3E9 /* inet_ntop_ipv4.c */,
 				2CCFD26C1AE731E2004AF3E9 /* inet_pton_ipv4.c */,
-				2CCFD2691AE73148004AF3E9 /* wraplib.c */,
-				2CCFD2671AE72B00004AF3E9 /* readn.c */,
 				2CCFD2631AE72ABF004AF3E9 /* writen.c */,
-				2CCFD2751AE74419004AF3E9 /* wrapstdio.c */,
+				2CCFD2671AE72B00004AF3E9 /* readn.c */,
 				2CCFD2651AE72AEC004AF3E9 /* readline.c */,
+				2CCFD2691AE73148004AF3E9 /* wraplib.c */,
 				2CCFD2581AE6EEC0004AF3E9 /* wrapunix.c */,
+				2CCFD2751AE74419004AF3E9 /* wrapstdio.c */,
 				2CCFD2541AE6E88C004AF3E9 /* wrapsock.c */,
-				2CCFD24C1AE6E1DD004AF3E9 /* commonheader.h */,
-				2CCFD2521AE6E69A004AF3E9 /* error.c */,
 			);
 			name = lib;
 			sourceTree = "<group>";
@@ -136,8 +138,12 @@
 		2CCFD25C1AE6EEE1004AF3E9 /* Movie */ = {
 			isa = PBXGroup;
 			children = (
+				2CCFD2731AE74344004AF3E9 /* str_cli.c */,
+				2CCFD2711AE7423B004AF3E9 /* str_echo.c */,
 				2CAE0A1A1AC883B6005E313F /* movie.h */,
 				2CAE0A191AC883B6005E313F /* movie.c */,
+				2CCFD27E1AE77198004AF3E9 /* movie_rental.h */,
+				2CCFD27D1AE77198004AF3E9 /* movie_rental.c */,
 			);
 			name = Movie;
 			sourceTree = "<group>";
@@ -145,7 +151,6 @@
 		2CCFD25D1AE6EEF5004AF3E9 /* tcp */ = {
 			isa = PBXGroup;
 			children = (
-				2CCFD27B1AE74F8B004AF3E9 /* sigchldwaitpid.c */,
 				2CCFD24D1AE6E25E004AF3E9 /* movietcpsrv.c */,
 				2CCFD24F1AE6E388004AF3E9 /* movietcpcli.c */,
 			);
@@ -210,6 +215,7 @@
 			files = (
 				2CAE0A1B1AC883B6005E313F /* movie.c in Sources */,
 				2CCFD2591AE6EEC0004AF3E9 /* wrapunix.c in Sources */,
+				2CCFD27F1AE77198004AF3E9 /* movie_rental.c in Sources */,
 				F9CB110D1AD9B274000939AF /* userExample.c in Sources */,
 				2CCFD26A1AE73148004AF3E9 /* wraplib.c in Sources */,
 				2C6CB23D1AC8829800CBBE5F /* main.c in Sources */,
