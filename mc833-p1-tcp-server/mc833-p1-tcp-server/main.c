@@ -7,21 +7,24 @@
 //
 
 #include <stdio.h>
-
-#include "movie.h"
+#include <string.h>
+//#include "movie.h"
 
 int main(int argc, const char * argv[]) {
     
-    Movie *movie = new_movie();
-    print_movie(movie);
-    free_movie(movie);
+//    Movie *movie = new_movie();
+//    print_movie(movie);
+//    free_movie(movie);
+//    
+//    Movie * allMovies = get_all_movies();
     
-    Movie * allMovies = get_all_movies();
+    char * titulos = "Titulo 1, titulo 2, titulo 3";
     
-    for (int i = 0; i < 6; i ++) {
-         print_movie(&allMovies[i]);
-    }
-   
+    puts(titulos);
+    
+    
+    
+    printf("%lu\n",strlen(titulos)) ;
     
     return 0;
 }

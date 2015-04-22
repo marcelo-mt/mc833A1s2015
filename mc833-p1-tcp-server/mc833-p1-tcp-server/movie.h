@@ -12,6 +12,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define NUM_MOVIES 6
+
 typedef enum {
     MovieGenreAction,
     MovieGenreDrama,
@@ -51,5 +53,7 @@ Movie * get_all_movies ();
  author: Bruno Vargas
  */
 void free_vector_movies (Movie * allMovies[]);
+
+
 
 #endif /* defined(__mc833_p1_tcp_server__movie__) */
