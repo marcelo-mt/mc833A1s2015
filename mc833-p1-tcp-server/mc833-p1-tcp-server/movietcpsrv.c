@@ -12,6 +12,7 @@
 
 int main(int argc, char **argv)
 {
+    pid_t pid;
     int					listenfd, connfd;
     socklen_t			len;
     struct sockaddr_in	servaddr, cliaddr;
@@ -23,7 +24,7 @@ int main(int argc, char **argv)
     bzero(&servaddr, sizeof(servaddr));
     servaddr.sin_family      = AF_INET;
     servaddr.sin_addr.s_addr = htonl(INADDR_ANY);
-    servaddr.sin_port        = htons(5001);	/* daytime server */
+    servaddr.sin_port        = htons(5005);	/* daytime server */
     
     Bind(listenfd, (SA *) &servaddr, sizeof(servaddr));
     
@@ -33,13 +34,22 @@ int main(int argc, char **argv)
         len = sizeof(cliaddr);
         connfd = Accept(listenfd, (SA *) &cliaddr, &len);
         
-        printf("connection from %s, port %d\n",
-               Inet_ntop(AF_INET, &cliaddr.sin_addr, buff, sizeof(buff)),
-               ntohs(cliaddr.sin_port));
+        if( (pid = Fork()) == 0) {
+            
+            Close(listenfd);
         
-        ticks = time(NULL);
-        snprintf(buff, sizeof(buff), "%.24s\r\n", ctime(&ticks));
-        Write(connfd, buff, strlen(buff));
+            printf("connection from %s, port %d\n",
+                   Inet_ntop(AF_INET, &cliaddr.sin_addr, buff, sizeof(buff)),
+                   ntohs(cliaddr.sin_port));
+            sleep(5);
+            ticks = time(NULL);
+            snprintf(buff, sizeof(buff), "%.24s\r\n", ctime(&ticks));
+            Write(connfd, buff, strlen(buff));
+            
+            Close(connfd);
+            exit(0);
+            
+        }
         
         Close(connfd);
     }
