@@ -71,7 +71,7 @@ int numOfMoviewWithId (int id)
     char b[1];
     //passando o numero para char
     a[0] = id + '0';
-    puts (strcat(a, "info.txt"));
+   strcat(a, "info.txt");
     if ((file = fopen(a, "r"))== NULL) {
         printf("arquivo nao pode ser aberto");
     }
@@ -113,9 +113,10 @@ int numOfMoviewWithId (int id)
 void allInfo ()
 {
     FILE *file, *file2;
-    int num;
     char a[BUFF_SIZE];
     char b[BUFF_SIZE];
+    char c[40];
+    
     //passando o numero para char
     if ((file = fopen("infos.txt", "r"))== NULL) {
         printf("arquivo nao pode ser aberto");
@@ -143,13 +144,28 @@ void allInfo ()
         clearVector(a);
         
         fgets(a, sizeof(a), file);
-        printf("ID = %s",a);
-        if ((file2 = fopen(strcat(a, "synopsis.txt"), "r")) == NULL) {
-            printf("nao foi possivel abrir o arquivo");
-        }
+        printf("Identifier = %s",a);
         
-        fgets(a, sizeof(a), file);
-        printf("ID = %s",a);
+        //removendo quebra linha
+        int i = 0;
+        while (1) {
+            if (a[i] == '\n') {
+                a[i] = 0;
+                break;
+            }
+            i++;
+        }
+        snprintf(c, sizeof (c), "%ssynopsis.txt", a);
+        
+        puts(c);
+        if ((file2 = fopen(c, "r")) == NULL) {
+            printf("nao foi possivel abrir o arquivo: %s\n",c);
+        } else {
+            while (!feof(file2)) {
+                fgets(b, sizeof(b), file2);
+                puts(b);
+            }
+        }
         
         clearVector(a);
         
@@ -190,6 +206,8 @@ int main(int argc, const char * argv[]) {
 //    
 //    fclose(file);
 //    allTitlesAndDates();
-    printf ("%d",numOfMoviewWithId(1));
+//    printf ("%d",numOfMoviewWithId(1));
+    printf("Main");
+    allInfo();
     return 0;
 }
