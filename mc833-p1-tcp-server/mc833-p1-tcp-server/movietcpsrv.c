@@ -17,6 +17,7 @@ int main(int argc, char **argv)
     socklen_t			clilen;
     struct sockaddr_in	cliaddr, servaddr;
     void				sig_chld(int);
+    char				buff[MAXLINE];
     
     listenfd = Socket(AF_INET, SOCK_STREAM, 0);
     
@@ -39,6 +40,10 @@ int main(int argc, char **argv)
             else
                 err_sys("accept error");
         }
+        
+        printf("connection from %s, port %d\n",
+               Inet_ntop(AF_INET, &cliaddr.sin_addr, buff, sizeof(buff)),
+               ntohs(cliaddr.sin_port));
         
         if ( (childpid = Fork()) == 0) {	/* child process */
         
