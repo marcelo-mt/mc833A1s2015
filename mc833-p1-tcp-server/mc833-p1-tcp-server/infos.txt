@@ -1,0 +1,42 @@
+Three Kingdoms
+Adventure
+Daniel Lee
+2008
+102.0
+6
+1
+Red Cliff
+Adventure
+John Woo
+2008
+148.0
+5
+1
+Interview with the Vampire: The Vampire Chronicles
+GenreRomance
+Neil Jordan
+1994
+123.0
+4
+1
+The Lord of the Rings: The Return of the King
+GenreAdventure
+Peter Jackson
+2003
+201.0
+3
+5
+Matrix
+ScienceFiction
+Andy Wachowski
+1999
+136.0
+2
+2
+Terminator
+ScienceFiction
+James Cameron
+1984
+108.0
+1
+4
