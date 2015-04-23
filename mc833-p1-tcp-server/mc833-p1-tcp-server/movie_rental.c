@@ -65,7 +65,7 @@ void list_all_title_year(int sockfd)
 void list_all_title_year_bygenre(int sockfd, MovieGenre genre)
 {
     char msg[MAXLINE];
-    snprintf(msg, sizeof(msg), "list_all_title_year_bygenre: %s\n", movie_genre_string(genre));
+    snprintf(msg, sizeof(msg), "list_all_title_year_bygenre: %s", movie_genre_string(genre));
     send_to_socket(sockfd, msg);
 }
 
