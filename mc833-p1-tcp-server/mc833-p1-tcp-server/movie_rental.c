@@ -9,7 +9,7 @@
 #include "movie_rental.h"
 #include "stripped_unp.h"
 
-void execute_action_with_request(int sockfd, Request *request)
+void execute_action_with_request(int sockfd, MovieRentalRequest *request)
 {
     switch (request->action) {
         case MovieRentalActionListTitleYear:
@@ -58,7 +58,7 @@ void list_all_title_year(int sockfd)
 {
     char msg[MAXLINE];
     printf("list_all_title_year");
-    snprintf(msg, sizeof(msg), "list_all_title_year\n");
+    snprintf(msg, sizeof(msg), "list_all_title_year");
     send_to_socket(sockfd, msg);
 }
 
@@ -72,34 +72,34 @@ void list_all_title_year_bygenre(int sockfd, MovieGenre genre)
 void get_synopsis_by_id(int sockfd, int identifier)
 {
     char msg[MAXLINE];
-    snprintf(msg, sizeof(msg), "get_synopsis_by_id: %d\n", identifier);
+    snprintf(msg, sizeof(msg), "get_synopsis_by_id: %d", identifier);
     send_to_socket(sockfd, msg);
 }
 
 void get_info_by_id(int sockfd, int identifier)
 {
     char msg[MAXLINE];
-    snprintf(msg, sizeof(msg), "get_info_by_id: %d\n", identifier);
+    snprintf(msg, sizeof(msg), "get_info_by_id: %d", identifier);
     send_to_socket(sockfd, msg);
 }
 
 void list_all_complete(int sockfd)
 {
     char msg[MAXLINE];
-    snprintf(msg, sizeof(msg), "list_all_complete\n");
+    snprintf(msg, sizeof(msg), "list_all_complete");
     send_to_socket(sockfd, msg);
 }
 
 void set_quantity_for_id(int sockfd, int identifier, int quantity)
 {
     char msg[MAXLINE];
-    snprintf(msg, sizeof(msg), "set_quantity_for_id: %d %d\n", identifier, quantity);
+    snprintf(msg, sizeof(msg), "set_quantity_for_id: %d %d", identifier, quantity);
     send_to_socket(sockfd, msg);
 }
 
 void get_quantity_by_id(int sockfd, int identifier)
 {
     char msg[MAXLINE];
-    snprintf(msg, sizeof(msg), "get_quantity_by_id: %d\n", identifier);
+    snprintf(msg, sizeof(msg), "get_quantity_by_id: %d", identifier);
     send_to_socket(sockfd, msg);
 }

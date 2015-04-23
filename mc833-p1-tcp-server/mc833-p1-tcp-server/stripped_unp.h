@@ -55,10 +55,6 @@
 /* Following shortens all the type casts of pointer arguments */
 #define	SA	struct sockaddr
 
-void	 str_echo(int);
-void	 str_cli(FILE *, int);
-
-
 /* arpa inet wrappers */
 const char		*Inet_ntop(int, const void *, char *, size_t);
 void			Inet_pton(int, const char *, void *);
@@ -71,41 +67,28 @@ Sigfunc         *Signal(int, Sigfunc *);
 
 /* prototypes for our Unix wrapper functions: see {Sec errors} */
 void	 Close(int);
+void     Gettimeofday(struct timeval *, void *);
 pid_t	 Fork(void);
-//void	*Malloc(size_t);
-//int		 Open(const char *, int, mode_t);
-//void	 Pipe(int *fds);
-//ssize_t	 Read(int, void *, size_t);
+void     *Malloc(size_t);
+int      Open(const char *, int, mode_t);
 pid_t	 Waitpid(pid_t, int *, int);
-//void	 Write(int, void *, size_t);
 
 /* prototypes for our stdio wrapper functions: see {Sec errors} */
-//void	 Fclose(FILE *);
-//FILE	*Fdopen(int, const char *);
+void	 Fclose(FILE *);
 char	*Fgets(char *, int, FILE *);
-//FILE	*Fopen(const char *, const char *);
+FILE	*Fopen(const char *, const char *);
 void	 Fputs(const char *, FILE *);
 
 /* prototypes for our socket wrapper functions: see {Sec errors} */
 int		 Accept(int, SA *, socklen_t *);
 void	 Bind(int, const SA *, socklen_t);
 void	 Connect(int, const SA *, socklen_t);
-//void	 Getpeername(int, SA *, socklen_t *);
-//void	 Getsockname(int, SA *, socklen_t *);
-//void	 Getsockopt(int, int, int, void *, socklen_t *);
 void	 Listen(int, int);
+ssize_t	 Recv(int, void *, size_t, int);
+int		 Socket(int, int, int);
+
 ssize_t	 Readline(int, void *, size_t);
 ssize_t	 Readn(int, void *, size_t);
-ssize_t	 Recv(int, void *, size_t, int);
-//ssize_t	 Recvfrom(int, void *, size_t, int, SA *, socklen_t *);
-//ssize_t	 Recvmsg(int, struct msghdr *, int);
-//void	 Send(int, const void *, size_t, int);
-//void	 Sendto(int, const void *, size_t, int, const SA *, socklen_t);
-//void	 Sendmsg(int, const struct msghdr *, int);
-//void	 Setsockopt(int, int, int, const void *, socklen_t);
-//int		 Sockatmark(int);
-int		 Socket(int, int, int);
-//void	 Socketpair(int, int, int, int *);
 void	 Writen(int, void *, size_t);
 
 

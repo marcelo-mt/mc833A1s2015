@@ -27,10 +27,10 @@ typedef struct _request {
     MovieRentalAction action;
     int parameter1;
     int parameter2;
-    
-} Request;
+    int timed;
+} MovieRentalRequest;
 
-void execute_action_with_request(int sockfd, Request *request);
+void execute_action_with_request(int sockfd, MovieRentalRequest *request);
 
 void list_all_title_year(int sockfd);
 void list_all_title_year_bygenre(int sockfd, MovieGenre genre);

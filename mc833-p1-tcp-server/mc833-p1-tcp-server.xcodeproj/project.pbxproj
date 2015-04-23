@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		2C6CB23D1AC8829800CBBE5F /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 2C6CB23C1AC8829800CBBE5F /* main.c */; };
 		2CAE0A1B1AC883B6005E313F /* movie.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CAE0A191AC883B6005E313F /* movie.c */; };
-		2CCFD24E1AE6E25E004AF3E9 /* movietcpsrv.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD24D1AE6E25E004AF3E9 /* movietcpsrv.c */; };
-		2CCFD2501AE6E388004AF3E9 /* movietcpcli.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD24F1AE6E388004AF3E9 /* movietcpcli.c */; };
+		2CCFD24E1AE6E25E004AF3E9 /* tcpserver.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD24D1AE6E25E004AF3E9 /* tcpserver.c */; };
+		2CCFD2501AE6E388004AF3E9 /* tcpclient.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD24F1AE6E388004AF3E9 /* tcpclient.c */; };
 		2CCFD2531AE6E69A004AF3E9 /* error.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD2521AE6E69A004AF3E9 /* error.c */; };
 		2CCFD2551AE6E88C004AF3E9 /* wrapsock.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD2541AE6E88C004AF3E9 /* wrapsock.c */; };
 		2CCFD2591AE6EEC0004AF3E9 /* wrapunix.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD2581AE6EEC0004AF3E9 /* wrapunix.c */; };
@@ -18,8 +18,8 @@
 		2CCFD2661AE72AEC004AF3E9 /* readline.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD2651AE72AEC004AF3E9 /* readline.c */; };
 		2CCFD2681AE72B00004AF3E9 /* readn.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD2671AE72B00004AF3E9 /* readn.c */; };
 		2CCFD26A1AE73148004AF3E9 /* wraplib.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD2691AE73148004AF3E9 /* wraplib.c */; };
-		2CCFD2721AE7423B004AF3E9 /* str_echo.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD2711AE7423B004AF3E9 /* str_echo.c */; };
-		2CCFD2741AE74344004AF3E9 /* str_cli.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD2731AE74344004AF3E9 /* str_cli.c */; };
+		2CCFD2721AE7423B004AF3E9 /* movie_rental_server.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD2711AE7423B004AF3E9 /* movie_rental_server.c */; };
+		2CCFD2741AE74344004AF3E9 /* movie_rental_client.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD2731AE74344004AF3E9 /* movie_rental_client.c */; };
 		2CCFD2761AE74419004AF3E9 /* wrapstdio.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD2751AE74419004AF3E9 /* wrapstdio.c */; };
 		2CCFD2781AE74B32004AF3E9 /* signal.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD2771AE74B32004AF3E9 /* signal.c */; };
 		2CCFD27C1AE74F8B004AF3E9 /* sigchldwaitpid.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD27B1AE74F8B004AF3E9 /* sigchldwaitpid.c */; };
@@ -42,13 +42,13 @@
 
 /* Begin PBXFileReference section */
 		2C155D411AE8A8080000780E /* stripped_unp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stripped_unp.h; sourceTree = "<group>"; };
+		2C155D441AE8BDDF0000780E /* movie_rental_header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = movie_rental_header.h; sourceTree = "<group>"; };
 		2C6CB2391AC8829800CBBE5F /* mc833-p1-tcp-server */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "mc833-p1-tcp-server"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C6CB23C1AC8829800CBBE5F /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		2CAE0A191AC883B6005E313F /* movie.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = movie.c; sourceTree = "<group>"; };
 		2CAE0A1A1AC883B6005E313F /* movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = movie.h; sourceTree = "<group>"; };
-		2CCFD24C1AE6E1DD004AF3E9 /* commonheader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = commonheader.h; sourceTree = "<group>"; };
-		2CCFD24D1AE6E25E004AF3E9 /* movietcpsrv.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = movietcpsrv.c; sourceTree = "<group>"; };
-		2CCFD24F1AE6E388004AF3E9 /* movietcpcli.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = movietcpcli.c; sourceTree = "<group>"; };
+		2CCFD24D1AE6E25E004AF3E9 /* tcpserver.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tcpserver.c; sourceTree = "<group>"; };
+		2CCFD24F1AE6E388004AF3E9 /* tcpclient.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tcpclient.c; sourceTree = "<group>"; };
 		2CCFD2521AE6E69A004AF3E9 /* error.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = error.c; sourceTree = "<group>"; };
 		2CCFD2541AE6E88C004AF3E9 /* wrapsock.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wrapsock.c; sourceTree = "<group>"; };
 		2CCFD2581AE6EEC0004AF3E9 /* wrapunix.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wrapunix.c; sourceTree = "<group>"; };
@@ -57,8 +57,8 @@
 		2CCFD2651AE72AEC004AF3E9 /* readline.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = readline.c; sourceTree = "<group>"; };
 		2CCFD2671AE72B00004AF3E9 /* readn.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = readn.c; sourceTree = "<group>"; };
 		2CCFD2691AE73148004AF3E9 /* wraplib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wraplib.c; sourceTree = "<group>"; };
-		2CCFD2711AE7423B004AF3E9 /* str_echo.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = str_echo.c; sourceTree = "<group>"; };
-		2CCFD2731AE74344004AF3E9 /* str_cli.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = str_cli.c; sourceTree = "<group>"; };
+		2CCFD2711AE7423B004AF3E9 /* movie_rental_server.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = movie_rental_server.c; sourceTree = "<group>"; };
+		2CCFD2731AE74344004AF3E9 /* movie_rental_client.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = movie_rental_client.c; sourceTree = "<group>"; };
 		2CCFD2751AE74419004AF3E9 /* wrapstdio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wrapstdio.c; sourceTree = "<group>"; };
 		2CCFD2771AE74B32004AF3E9 /* signal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = signal.c; sourceTree = "<group>"; };
 		2CCFD27B1AE74F8B004AF3E9 /* sigchldwaitpid.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sigchldwaitpid.c; sourceTree = "<group>"; };
@@ -99,9 +99,9 @@
 			isa = PBXGroup;
 			children = (
 				2CCFD2621AE71C1E004AF3E9 /* Makefile */,
-				2CCFD25D1AE6EEF5004AF3E9 /* tcp */,
-				2CCFD25C1AE6EEE1004AF3E9 /* Movie */,
 				2CCFD25B1AE6EED6004AF3E9 /* lib */,
+				2CCFD25C1AE6EEE1004AF3E9 /* MovieRental */,
+				2CCFD25D1AE6EEF5004AF3E9 /* tcp */,
 				2C6CB23C1AC8829800CBBE5F /* main.c */,
 				F9CB110A1AD9B255000939AF /* serverExample.c */,
 				F9CB110C1AD9B274000939AF /* userExample.c */,
@@ -112,7 +112,6 @@
 		2CCFD25B1AE6EED6004AF3E9 /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				2CCFD24C1AE6E1DD004AF3E9 /* commonheader.h */,
 				2C155D411AE8A8080000780E /* stripped_unp.h */,
 				2CCFD2521AE6E69A004AF3E9 /* error.c */,
 				2CCFD2771AE74B32004AF3E9 /* signal.c */,
@@ -128,24 +127,25 @@
 			name = lib;
 			sourceTree = "<group>";
 		};
-		2CCFD25C1AE6EEE1004AF3E9 /* Movie */ = {
+		2CCFD25C1AE6EEE1004AF3E9 /* MovieRental */ = {
 			isa = PBXGroup;
 			children = (
-				2CCFD2731AE74344004AF3E9 /* str_cli.c */,
-				2CCFD2711AE7423B004AF3E9 /* str_echo.c */,
+				2C155D441AE8BDDF0000780E /* movie_rental_header.h */,
+				2CCFD2711AE7423B004AF3E9 /* movie_rental_server.c */,
+				2CCFD2731AE74344004AF3E9 /* movie_rental_client.c */,
 				2CAE0A1A1AC883B6005E313F /* movie.h */,
 				2CAE0A191AC883B6005E313F /* movie.c */,
 				2CCFD27E1AE77198004AF3E9 /* movie_rental.h */,
 				2CCFD27D1AE77198004AF3E9 /* movie_rental.c */,
 			);
-			name = Movie;
+			name = MovieRental;
 			sourceTree = "<group>";
 		};
 		2CCFD25D1AE6EEF5004AF3E9 /* tcp */ = {
 			isa = PBXGroup;
 			children = (
-				2CCFD24D1AE6E25E004AF3E9 /* movietcpsrv.c */,
-				2CCFD24F1AE6E388004AF3E9 /* movietcpcli.c */,
+				2CCFD24D1AE6E25E004AF3E9 /* tcpserver.c */,
+				2CCFD24F1AE6E388004AF3E9 /* tcpclient.c */,
 			);
 			name = tcp;
 			sourceTree = "<group>";
@@ -213,18 +213,18 @@
 				2CCFD26A1AE73148004AF3E9 /* wraplib.c in Sources */,
 				2C6CB23D1AC8829800CBBE5F /* main.c in Sources */,
 				2CCFD2531AE6E69A004AF3E9 /* error.c in Sources */,
-				2CCFD2501AE6E388004AF3E9 /* movietcpcli.c in Sources */,
+				2CCFD2501AE6E388004AF3E9 /* tcpclient.c in Sources */,
 				2CCFD27C1AE74F8B004AF3E9 /* sigchldwaitpid.c in Sources */,
 				2CCFD2761AE74419004AF3E9 /* wrapstdio.c in Sources */,
 				2CCFD2681AE72B00004AF3E9 /* readn.c in Sources */,
 				2CCFD2661AE72AEC004AF3E9 /* readline.c in Sources */,
 				2CCFD2641AE72ABF004AF3E9 /* writen.c in Sources */,
 				2CCFD2781AE74B32004AF3E9 /* signal.c in Sources */,
-				2CCFD2741AE74344004AF3E9 /* str_cli.c in Sources */,
+				2CCFD2741AE74344004AF3E9 /* movie_rental_client.c in Sources */,
 				2CCFD2551AE6E88C004AF3E9 /* wrapsock.c in Sources */,
 				F9CB110B1AD9B255000939AF /* serverExample.c in Sources */,
-				2CCFD24E1AE6E25E004AF3E9 /* movietcpsrv.c in Sources */,
-				2CCFD2721AE7423B004AF3E9 /* str_echo.c in Sources */,
+				2CCFD24E1AE6E25E004AF3E9 /* tcpserver.c in Sources */,
+				2CCFD2721AE7423B004AF3E9 /* movie_rental_server.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
