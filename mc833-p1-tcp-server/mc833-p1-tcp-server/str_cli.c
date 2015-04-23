@@ -1,11 +1,19 @@
 #include	"commonheader.h"
 
 #include "movie_rental.h"
+void cVector(char vector[])
+{
+    for (int i = 0; i< MAXLINE; i++) {
+        vector[i] = 0;
+    }
+    
+}
 
 void str_cli(FILE *fp, int sockfd)
 {
     char			sendline[MAXLINE], recvline[MAXLINE];
     Request		request;
+    long totalSize;
     
     while (Fgets(sendline, MAXLINE, fp) != NULL) {
         
@@ -16,9 +24,15 @@ void str_cli(FILE *fp, int sockfd)
         
         Writen(sockfd, &request, sizeof(request));
         
-        if (Readline(sockfd, recvline, MAXLINE) == 0)
-            err_quit("str_cli: server terminated prematurely");
-        
-        Fputs(recvline, stdout);
+        while (1) {
+            if ((totalSize = (Readline(sockfd, recvline, MAXLINE))) == 0)
+                err_quit("str_cli: server terminated prematurely");
+           
+            if(strstr(recvline, "--") != NULL) {
+                break;
+            }
+            Fputs(recvline, stdout);
+            cVector(recvline);
+        }
     }
 }
