@@ -1,7 +1,7 @@
-Interview with the Vampire: The Vampire Chronicles
-GenreRomance
-Neil Jordan
-1994
-123.0
-4
-1
+Nome = Interview with the Vampire: The Vampire Chronicles
+Genero = GenreRomance
+Diretor = Neil Jordan
+Ano = 1994
+Duração = 123.0
+Identificador = 4
+Disponíveis = 1

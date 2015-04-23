@@ -1,7 +1,7 @@
-The Lord of the Rings: The Return of the King
-GenreAdventure
-Peter Jackson
-2003
-201.0
-3
-5
+Nome = The Lord of the Rings: The Return of the King
+Genero = GenreAdventure
+Diretor = Peter Jackson
+Ano = 2003
+Duração: 201.0
+Identificador = 3
+Disponíveis = 5
