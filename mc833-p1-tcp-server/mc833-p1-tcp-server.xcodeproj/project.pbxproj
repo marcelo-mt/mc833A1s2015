@@ -18,9 +18,6 @@
 		2CCFD2661AE72AEC004AF3E9 /* readline.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD2651AE72AEC004AF3E9 /* readline.c */; };
 		2CCFD2681AE72B00004AF3E9 /* readn.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD2671AE72B00004AF3E9 /* readn.c */; };
 		2CCFD26A1AE73148004AF3E9 /* wraplib.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD2691AE73148004AF3E9 /* wraplib.c */; };
-		2CCFD26D1AE731E2004AF3E9 /* inet_ntop_ipv4.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD26B1AE731E2004AF3E9 /* inet_ntop_ipv4.c */; };
-		2CCFD26E1AE731E2004AF3E9 /* inet_pton_ipv4.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD26C1AE731E2004AF3E9 /* inet_pton_ipv4.c */; };
-		2CCFD2701AE73347004AF3E9 /* inet_aton.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD26F1AE73347004AF3E9 /* inet_aton.c */; };
 		2CCFD2721AE7423B004AF3E9 /* str_echo.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD2711AE7423B004AF3E9 /* str_echo.c */; };
 		2CCFD2741AE74344004AF3E9 /* str_cli.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD2731AE74344004AF3E9 /* str_cli.c */; };
 		2CCFD2761AE74419004AF3E9 /* wrapstdio.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD2751AE74419004AF3E9 /* wrapstdio.c */; };
@@ -44,6 +41,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2C155D411AE8A8080000780E /* stripped_unp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stripped_unp.h; sourceTree = "<group>"; };
 		2C6CB2391AC8829800CBBE5F /* mc833-p1-tcp-server */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "mc833-p1-tcp-server"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C6CB23C1AC8829800CBBE5F /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		2CAE0A191AC883B6005E313F /* movie.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = movie.c; sourceTree = "<group>"; };
@@ -59,9 +57,6 @@
 		2CCFD2651AE72AEC004AF3E9 /* readline.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = readline.c; sourceTree = "<group>"; };
 		2CCFD2671AE72B00004AF3E9 /* readn.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = readn.c; sourceTree = "<group>"; };
 		2CCFD2691AE73148004AF3E9 /* wraplib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wraplib.c; sourceTree = "<group>"; };
-		2CCFD26B1AE731E2004AF3E9 /* inet_ntop_ipv4.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = inet_ntop_ipv4.c; sourceTree = "<group>"; };
-		2CCFD26C1AE731E2004AF3E9 /* inet_pton_ipv4.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = inet_pton_ipv4.c; sourceTree = "<group>"; };
-		2CCFD26F1AE73347004AF3E9 /* inet_aton.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = inet_aton.c; sourceTree = "<group>"; };
 		2CCFD2711AE7423B004AF3E9 /* str_echo.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = str_echo.c; sourceTree = "<group>"; };
 		2CCFD2731AE74344004AF3E9 /* str_cli.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = str_cli.c; sourceTree = "<group>"; };
 		2CCFD2751AE74419004AF3E9 /* wrapstdio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wrapstdio.c; sourceTree = "<group>"; };
@@ -118,12 +113,10 @@
 			isa = PBXGroup;
 			children = (
 				2CCFD24C1AE6E1DD004AF3E9 /* commonheader.h */,
+				2C155D411AE8A8080000780E /* stripped_unp.h */,
 				2CCFD2521AE6E69A004AF3E9 /* error.c */,
 				2CCFD2771AE74B32004AF3E9 /* signal.c */,
 				2CCFD27B1AE74F8B004AF3E9 /* sigchldwaitpid.c */,
-				2CCFD26F1AE73347004AF3E9 /* inet_aton.c */,
-				2CCFD26B1AE731E2004AF3E9 /* inet_ntop_ipv4.c */,
-				2CCFD26C1AE731E2004AF3E9 /* inet_pton_ipv4.c */,
 				2CCFD2631AE72ABF004AF3E9 /* writen.c */,
 				2CCFD2671AE72B00004AF3E9 /* readn.c */,
 				2CCFD2651AE72AEC004AF3E9 /* readline.c */,
@@ -231,9 +224,6 @@
 				2CCFD2551AE6E88C004AF3E9 /* wrapsock.c in Sources */,
 				F9CB110B1AD9B255000939AF /* serverExample.c in Sources */,
 				2CCFD24E1AE6E25E004AF3E9 /* movietcpsrv.c in Sources */,
-				2CCFD2701AE73347004AF3E9 /* inet_aton.c in Sources */,
-				2CCFD26D1AE731E2004AF3E9 /* inet_ntop_ipv4.c in Sources */,
-				2CCFD26E1AE731E2004AF3E9 /* inet_pton_ipv4.c in Sources */,
 				2CCFD2721AE7423B004AF3E9 /* str_echo.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,5 +1,5 @@
 /* include writen */
-#include	"commonheader.h"
+#include	"stripped_unp.h"
 
 ssize_t						/* Write "n" bytes to a descriptor. */
 writen(int fd, const void *vptr, size_t n)

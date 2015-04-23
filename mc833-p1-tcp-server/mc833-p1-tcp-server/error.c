@@ -1,4 +1,4 @@
-#include	"commonheader.h"
+#include	"stripped_unp.h"
 
 #include	<stdarg.h>		/* ANSI C header file */
 #include	<syslog.h>		/* for syslog() */

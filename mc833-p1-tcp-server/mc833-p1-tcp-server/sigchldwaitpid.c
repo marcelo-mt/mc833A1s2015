@@ -1,4 +1,4 @@
-#include	"commonheader.h"
+#include	"stripped_unp.h"
 
 void
 sig_chld(int signo)

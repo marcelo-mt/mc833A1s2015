@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 mc833. All rights reserved.
 //
 
-#include "commonheader.h"
+#include "stripped_unp.h"
 
 #include	<time.h>
 

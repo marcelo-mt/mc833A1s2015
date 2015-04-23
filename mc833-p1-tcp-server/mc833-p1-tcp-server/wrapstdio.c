@@ -2,7 +2,7 @@
  * Standard I/O wrapper functions.
  */
 
-#include	"commonheader.h"
+#include	"stripped_unp.h"
 
 void
 Fclose(FILE *fp)

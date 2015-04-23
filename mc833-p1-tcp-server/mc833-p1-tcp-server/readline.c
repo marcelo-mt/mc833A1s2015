@@ -1,5 +1,5 @@
 /* include readline */
-#include	"commonheader.h"
+#include	"stripped_unp.h"
 
 static ssize_t
 my_read(int fd, char *ptr)
