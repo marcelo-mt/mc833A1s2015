@@ -1,11 +1,13 @@
+SRC_DIR=.
+
 all: tcpclient tcpserver
 
-tcpserver: movie.c movie_rental.c error.c signal.c sigchldwaitpid.c wrapunix.c wrapsock.c inet_aton.c inet_ntop_ipv4.c inet_pton_ipv4.c readn.c writen.c readline.c wraplib.c wrapstdio.c str_cli.c str_echo.c movietcpsrv.c
-	gcc movie.c movie_rental.c error.c signal.c sigchldwaitpid.c wrapunix.c wrapsock.c inet_aton.c inet_ntop_ipv4.c inet_pton_ipv4.c readn.c writen.c readline.c wraplib.c wrapstdio.c str_cli.c str_echo.c movietcpsrv.c -o tcpserver
+tcpserver: movie.c movie_rental.c movie_rental_server.c error.c signal.c sigchldwaitpid.c wrapunix.c wrapsock.c readn.c writen.c readline.c wraplib.c wrapstdio.c tcpserver.c
+	gcc movie.c movie_rental.c movie_rental_server.c error.c signal.c sigchldwaitpid.c wrapunix.c wrapsock.c readn.c writen.c readline.c wraplib.c wrapstdio.c tcpserver.c -o tcpserver
 
-tcpclient: movie.c movie_rental.c error.c signal.c sigchldwaitpid.c wrapunix.c wrapsock.c inet_aton.c inet_ntop_ipv4.c inet_pton_ipv4.c readn.c writen.c readline.c wraplib.c wrapstdio.c str_cli.c str_echo.c movietcpcli.c
-	gcc movie.c movie_rental.c error.c signal.c sigchldwaitpid.c wrapunix.c wrapsock.c inet_aton.c inet_ntop_ipv4.c inet_pton_ipv4.c readn.c writen.c readline.c wraplib.c wrapstdio.c str_cli.c str_echo.c movietcpcli.c -o tcpclient
+tcpclient: movie.c movie_rental.c movie_rental_client.c error.c signal.c sigchldwaitpid.c wrapunix.c wrapsock.c readn.c writen.c readline.c wraplib.c wrapstdio.c tcpclient.c
+	gcc movie.c movie_rental.c movie_rental_client.c error.c signal.c sigchldwaitpid.c wrapunix.c wrapsock.c readn.c writen.c readline.c wraplib.c wrapstdio.c tcpclient.c -o tcpclient
 
 clean:
-	rm tcpclient tcpserver
+	-rm -f $(SRC_DIR)/*.o *.o tcpclient tcpserver
 

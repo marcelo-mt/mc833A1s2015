@@ -2,24 +2,13 @@
  * Standard I/O wrapper functions.
  */
 
-#include	"commonheader.h"
+#include	"stripped_unp.h"
 
 void
 Fclose(FILE *fp)
 {
 	if (fclose(fp) != 0)
 		err_sys("fclose error");
-}
-
-FILE *
-Fdopen(int fd, const char *type)
-{
-	FILE	*fp;
-
-	if ( (fp = fdopen(fd, type)) == NULL)
-		err_sys("fdopen error");
-
-	return(fp);
 }
 
 char *

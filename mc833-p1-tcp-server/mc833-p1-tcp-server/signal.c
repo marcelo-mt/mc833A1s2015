@@ -1,5 +1,5 @@
 /* include signal */
-#include	"commonheader.h"
+#include	"stripped_unp.h"
 
 Sigfunc *
 signal(int signo, Sigfunc *func)

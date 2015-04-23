@@ -6,9 +6,8 @@
 //  Copyright (c) 2015 mc833. All rights reserved.
 //
 
-#include "commonheader.h"
-
-#include	<time.h>
+#include "stripped_unp.h"
+#include "movie_rental_header.h"
 
 int main(int argc, char **argv)
 {
@@ -49,7 +48,7 @@ int main(int argc, char **argv)
         
             Close(listenfd);	/* close listening socket */
         
-            str_echo(connfd);	/* process the request */
+            movie_rental_server(connfd);	/* process the request */
             
             exit(0);
         }
