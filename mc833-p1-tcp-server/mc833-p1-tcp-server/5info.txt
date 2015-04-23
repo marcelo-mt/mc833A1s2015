@@ -1,0 +1,7 @@
+Nome = Red Cliff
+Genero = Adventure
+Diretor = John Woo
+Ano = 2008
+Duração = 148.0
+Identificador = 5
+Disponíveis = 1

@@ -28,7 +28,7 @@ int main(int argc, char **argv)
     } else {
         
         if (argc != 4) {
-            err_quit("usage: tcpclient <IPaddress> <Test#> <RepCount>");
+            err_quit("usage: ./tcpclient <IPaddress> <Test#> <RepCount>");
         }
         
         test = atoi(argv[2]);

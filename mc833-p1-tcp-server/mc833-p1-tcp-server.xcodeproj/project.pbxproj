@@ -43,6 +43,22 @@
 /* Begin PBXFileReference section */
 		2C155D411AE8A8080000780E /* stripped_unp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stripped_unp.h; sourceTree = "<group>"; };
 		2C155D441AE8BDDF0000780E /* movie_rental_header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = movie_rental_header.h; sourceTree = "<group>"; };
+		2C155D461AE8E3AF0000780E /* 1info.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = 1info.txt; sourceTree = "<group>"; };
+		2C155D471AE8E3AF0000780E /* 1synopsis.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = 1synopsis.txt; sourceTree = "<group>"; };
+		2C155D481AE8E3AF0000780E /* 2info.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = 2info.txt; sourceTree = "<group>"; };
+		2C155D491AE8E3AF0000780E /* 2synopsis.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = 2synopsis.txt; sourceTree = "<group>"; };
+		2C155D4A1AE8E3AF0000780E /* 3info.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = 3info.txt; sourceTree = "<group>"; };
+		2C155D4B1AE8E3AF0000780E /* 3synopsis.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = 3synopsis.txt; sourceTree = "<group>"; };
+		2C155D4C1AE8E3AF0000780E /* 4info.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = 4info.txt; sourceTree = "<group>"; };
+		2C155D4D1AE8E3AF0000780E /* 4synopsis.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = 4synopsis.txt; sourceTree = "<group>"; };
+		2C155D4E1AE8E3AF0000780E /* 5info.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = 5info.txt; sourceTree = "<group>"; };
+		2C155D4F1AE8E3AF0000780E /* 5synopsis.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = 5synopsis.txt; sourceTree = "<group>"; };
+		2C155D501AE8E3AF0000780E /* 6info.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = 6info.txt; sourceTree = "<group>"; };
+		2C155D511AE8E3AF0000780E /* 6synopsis.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = 6synopsis.txt; sourceTree = "<group>"; };
+		2C155D521AE8E3AF0000780E /* infos.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = infos.txt; sourceTree = "<group>"; };
+		2C155D531AE8E9240000780E /* Adventure.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Adventure.txt; sourceTree = "<group>"; };
+		2C155D541AE8E9240000780E /* Romance.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Romance.txt; sourceTree = "<group>"; };
+		2C155D551AE8E9240000780E /* ScienceFiction.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ScienceFiction.txt; sourceTree = "<group>"; };
 		2C6CB2391AC8829800CBBE5F /* mc833-p1-tcp-server */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "mc833-p1-tcp-server"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C6CB23C1AC8829800CBBE5F /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		2CAE0A191AC883B6005E313F /* movie.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = movie.c; sourceTree = "<group>"; };
@@ -79,6 +95,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C155D451AE8E2D70000780E /* movie_files */ = {
+			isa = PBXGroup;
+			children = (
+				2C155D531AE8E9240000780E /* Adventure.txt */,
+				2C155D541AE8E9240000780E /* Romance.txt */,
+				2C155D551AE8E9240000780E /* ScienceFiction.txt */,
+				2C155D461AE8E3AF0000780E /* 1info.txt */,
+				2C155D471AE8E3AF0000780E /* 1synopsis.txt */,
+				2C155D481AE8E3AF0000780E /* 2info.txt */,
+				2C155D491AE8E3AF0000780E /* 2synopsis.txt */,
+				2C155D4A1AE8E3AF0000780E /* 3info.txt */,
+				2C155D4B1AE8E3AF0000780E /* 3synopsis.txt */,
+				2C155D4C1AE8E3AF0000780E /* 4info.txt */,
+				2C155D4D1AE8E3AF0000780E /* 4synopsis.txt */,
+				2C155D4E1AE8E3AF0000780E /* 5info.txt */,
+				2C155D4F1AE8E3AF0000780E /* 5synopsis.txt */,
+				2C155D501AE8E3AF0000780E /* 6info.txt */,
+				2C155D511AE8E3AF0000780E /* 6synopsis.txt */,
+				2C155D521AE8E3AF0000780E /* infos.txt */,
+			);
+			name = movie_files;
+			sourceTree = "<group>";
+		};
 		2C6CB2301AC8829800CBBE5F = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +139,7 @@
 			children = (
 				2CCFD2621AE71C1E004AF3E9 /* Makefile */,
 				2CCFD25B1AE6EED6004AF3E9 /* lib */,
+				2C155D451AE8E2D70000780E /* movie_files */,
 				2CCFD25C1AE6EEE1004AF3E9 /* MovieRental */,
 				2CCFD25D1AE6EEF5004AF3E9 /* tcp */,
 				2C6CB23C1AC8829800CBBE5F /* main.c */,

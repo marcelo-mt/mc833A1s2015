@@ -31,9 +31,9 @@ void movie_rental_server(int sockfd)
             elapsedTime += (t2.tv_usec - t1.tv_usec);   // us
             
             // Append to tempo de consulta/atualização ao final (em microsegundos)
-            snprintf(time_str, sizeof(time_str), "|%ld\n", elapsedTime);
+            snprintf(time_str, sizeof(time_str), "|%ld--\n", elapsedTime);
         } else {
-            snprintf(time_str, sizeof(time_str), "\n");
+            snprintf(time_str, sizeof(time_str), "--\n");
         }
         
         n = strlen(time_str);

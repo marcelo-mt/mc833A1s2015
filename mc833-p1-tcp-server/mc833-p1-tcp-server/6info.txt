@@ -1,0 +1,7 @@
+Nome = Three Kingdoms
+Gênero  = Adventure
+Diretor = Daniel Lee
+Ano = 2008
+Duração = 102.0
+Identificador = 6
+Disponíveis = 1

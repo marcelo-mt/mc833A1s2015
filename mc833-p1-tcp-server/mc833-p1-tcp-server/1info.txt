@@ -1,0 +1,7 @@
+Nome = Terminator
+Gênero = ScienceFiction
+Diretor = James Cameron
+Ano = 1984
+duração = 108.0
+Identificador = 1
+3
