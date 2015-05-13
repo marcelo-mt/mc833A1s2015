@@ -17,6 +17,12 @@ void dg_cli(FILE *fp, int sockfd, const SA *pservaddr, socklen_t servlen)
     char	sendline[MAXLINE], recvline[MAXLINE + 1];
     char    msg[MAXLINE];
     
+    struct timeval t1, t2;
+    long int elapsedTime;
+    int server_time;
+    char *server_time_str;
+    char sr_t[100];
+    
     MovieRentalRequest         request;
     
     request.action = -1;
@@ -27,6 +33,8 @@ void dg_cli(FILE *fp, int sockfd, const SA *pservaddr, socklen_t servlen)
     Connect(sockfd, (SA *) pservaddr, servlen);
     
     while (Fgets(sendline, MAXLINE, fp) != NULL) {
+        
+        Gettimeofday(&t1, NULL);
         
         request.action = -1;
         request.parameter1 = -1;
@@ -45,12 +53,27 @@ void dg_cli(FILE *fp, int sockfd, const SA *pservaddr, socklen_t servlen)
         
         Write(sockfd, msg, strlen(msg));
         
-//        while (1) {
-            n = Read(sockfd, recvline, MAXLINE);
-            
-            recvline[n] = 0;	/* null terminate */
-            Fputs(recvline, stdout);
-//        }
+        n = Read(sockfd, recvline, MAXLINE);
+        
+        recvline[n] = 0;	/* null terminate */
+        
+        Fputs(recvline, stdout);
+        
+        server_time_str = strrchr(recvline,'|');
+        server_time = atoi(server_time_str+1);
+        snprintf(sr_t, sizeof(sr_t),"\nTempos: %d;", server_time);
+        Fputs(sr_t, stdout);
+        
+        
+        // Termina o timer
+        Gettimeofday(&t2, NULL);
+        
+        // Computa os valores
+        elapsedTime = (t2.tv_sec - t1.tv_sec) * 1000000;      // sec to us
+        elapsedTime += (t2.tv_usec - t1.tv_usec);   // us
+        
+        snprintf(sr_t, sizeof(sr_t),"%ld\n", elapsedTime);
+        Fputs(sr_t, stdout);
     }
 }
 
