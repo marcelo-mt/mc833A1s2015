@@ -10,7 +10,7 @@
 
 #include "movie_rental.h"
 
-void dg_echo(int sockfd, SA *pcliaddr, socklen_t clilen)
+void udp_srv(int sockfd, SA *pcliaddr, socklen_t clilen)
 {
 //    int			n;
     socklen_t	len;
@@ -55,5 +55,5 @@ int main(int argc, char **argv)
     
     Bind(sockfd, (SA *) &servaddr, sizeof(servaddr));
     
-    dg_echo(sockfd, (SA *) &cliaddr, sizeof(cliaddr));
+    udp_srv(sockfd, (SA *) &cliaddr, sizeof(cliaddr));
 }

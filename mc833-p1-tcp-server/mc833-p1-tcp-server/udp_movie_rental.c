@@ -265,7 +265,6 @@ int allInfo (int sock)
     putInUDPSocket(sock, resp);
     return 1;
     
-    
 }
 
 int synopsisOfMovie (int id, int sock)
@@ -288,7 +287,7 @@ int synopsisOfMovie (int id, int sock)
         }
         putInUDPSocket(sock, resp);
     }
-    putInUDPSocket(sock, "\n");
+//    putInUDPSocket(sock, "\n");
     fclose(file);
     return 1;
 }
@@ -344,6 +343,9 @@ int editDisponibilityOfMovie(int id, int sock, int newDisp)
     clearVector(identifier);
     clearVector(disponibility);
     fclose(file);
+    
+    putInUDPSocket(sock, "");
+    
     return 1;
 }
 
