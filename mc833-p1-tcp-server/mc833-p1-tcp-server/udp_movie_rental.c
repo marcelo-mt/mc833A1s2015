@@ -343,7 +343,9 @@ int editDisponibilityOfMovie(int id, int sock, int newDisp)
     clearVector(disponibility);
     fclose(file);
     
-    putInUDPSocket(sock, "teste");
+    
+    
+    putInUDPSocket(sock, aux);
     
     return 1;
 }
