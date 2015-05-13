@@ -1,11 +1,3 @@
-//
-//  movie_rental.c
-//  mc833-p1-tcp-server
-//
-//  Created by Marcelo M Toledo on 4/22/15.
-//  Copyright (c) 2015 mc833. All rights reserved.
-//
-
 #include "movie_rental.h"
 #include "stripped_unp.h"
 
@@ -25,14 +17,10 @@ void clearVector(char vector[])
  */
 void putInSocket(int socket, char text[])
 {
-//    puts(text);
-//    strcat(text, "--");
-//    text[MAXLINE -1] = EOF;
     Writen(socket, text, strlen(text));
 }
 
 #pragma mark - Métodos de 'busca'
-
 int listOfMoviesOfGenre (int sock, int genre)
 {
     char resp [INF_SIZE];
@@ -131,34 +119,27 @@ int numOfMoviewWithId (int sock, int id)
     
     
     fgets(a, sizeof(a), file);
-    //    printf("movie = %s",a);
     clearVector(a);
     
     fgets(a, sizeof(a), file);
-    //        printf("Genre = %s",a);
     clearVector(a);
     
     fgets(a, sizeof(a), file);
-    //        printf("Director = %s",a);
     clearVector(a);
     
     fgets(a, sizeof(a), file);
-    //    printf("Year = %s",a);
     clearVector(a);
     
     fgets(a, sizeof(a), file);
-    //        printf("Time = %s",a);
     clearVector(a);
     
     fgets(a, sizeof(a), file);
-    //        printf("ID = %s",a);
     clearVector(a);
     
     fgets(a, sizeof(a), file);
-    //            printf("Disponible = %s \n",a);
     clearVector(a);
     fclose(file);
-    //so funfa com ascii
+
     putInSocket(sock, a);
     return  1;
     
@@ -389,57 +370,36 @@ void send_to_socket(int sockfd, char msg[MAXLINE])
 
 void list_all_title_year(int sockfd)
 {
-//    char msg[MAXLINE];
-//    printf("list_all_title_year");
-//    snprintf(msg, sizeof(msg), "list_all_title_year");
-//    send_to_socket(sockfd, msg);
+
     allTitlesAndDates(sockfd);
 }
 
 void list_all_title_year_bygenre(int sockfd, MovieGenre genre)
 {
-//    char msg[MAXLINE];
-//    snprintf(msg, sizeof(msg), "list_all_title_year_bygenre: %s", movie_genre_string(genre));
-//    send_to_socket(sockfd, msg);
     listOfMoviesOfGenre(sockfd, genre);
 }
 
 void get_synopsis_by_id(int sockfd, int identifier)
 {
-//    char msg[MAXLINE];
-//    snprintf(msg, sizeof(msg), "get_synopsis_by_id: %d", identifier);
-//    send_to_socket(sockfd, msg);
     synopsisOfMovie(identifier, sockfd);
 }
 
 void get_info_by_id(int sockfd, int identifier)
 {
-//    char msg[MAXLINE];
-//    snprintf(msg, sizeof(msg), "get_info_by_id: %d", identifier);
-//    send_to_socket(sockfd, msg);
     infoOfMovie(identifier, sockfd);
 }
 
 void list_all_complete(int sockfd)
 {
-//    char msg[MAXLINE];
-//    snprintf(msg, sizeof(msg), "list_all_complete");
-//    send_to_socket(sockfd, msg);
     allInfo(sockfd);
 }
 
 void set_quantity_for_id(int sockfd, int identifier, int quantity)
 {
-//    char msg[MAXLINE];
-//    snprintf(msg, sizeof(msg), "set_quantity_for_id: %d %d", identifier, quantity);
-//    send_to_socket(sockfd, msg);
     editDisponibilityOfMovie(identifier, sockfd, quantity);
 }
 
 void get_quantity_by_id(int sockfd, int identifier)
 {
-//    char msg[MAXLINE];
-//    snprintf(msg, sizeof(msg), "get_quantity_by_id: %d", identifier);
-//    send_to_socket(sockfd, msg);
     numOfMoviewWithId(sockfd, identifier);
 }

@@ -65,28 +65,28 @@ void movie_rental_client_test(FILE *fp, int sockfd, Test test, int rep_count, st
             request.parameter1 = MovieGenreAdventure;
             break;
         case Test3:
-            request.action = MovieRentalActionListTitleYearGenre;
+            request.action = MovieRentalActionGetSynopsis;
             request.parameter1 = 1;
             break;
         case Test4:
-            request.action = MovieRentalActionListTitleYearGenre;
+            request.action = MovieRentalActionGetCompleteInfo;
             request.parameter1 = 5;
             break;
         case Test5:
-            request.action = MovieRentalActionListTitleYearGenre;
+            request.action = MovieRentalActionListAllCompleteInfo;
             break;
         case Test6:
-            request.action = MovieRentalActionListTitleYearGenre;
+            request.action = MovieRentalActionSetQuantity;
             request.parameter1 = 4;
             request.parameter2 = 15;
             break;
         case Test7:
-            request.action = MovieRentalActionListTitleYearGenre;
+            request.action = MovieRentalActionGetQuantity;
             request.parameter1 = 3;
             break;
         case Test1:
         default:
-            request.action = MovieRentalActionListTitleYearGenre;
+            request.action = MovieRentalActionListTitleYear;
             break;
     }
     

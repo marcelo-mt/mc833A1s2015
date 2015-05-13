@@ -1,11 +1,3 @@
-//
-//  movietcpcli.c
-//  mc833-p1-tcp-server
-//
-//  Created by Marcelo M Toledo on 4/21/15.
-//  Copyright (c) 2015 mc833. All rights reserved.
-//
-
 #include "stripped_unp.h"
 #include "movie_rental_header.h"
 
@@ -20,30 +12,24 @@ int main(int argc, char **argv)
     int test_rep;
     Test test;
     
+    // Parse dos argumentos de entrada para determinar o modo
+    // de execução.
     if (argc == 2) {
-        
         test = NoTest;
         test_rep = 1;
-        
     } else {
-        
         if (argc != 4) {
             err_quit("usage: ./tcpclient <IPaddress> <Test#> <RepCount>");
         }
-        
         test = atoi(argv[2]);
         test_rep = atoi(argv[3]);
-        
         if (test < 1 || test > DEFINED_TESTS) {
             err_quit("test %d not defined", test);
         }
-        
         if (test_rep < 1) {
             err_quit("test rep_count should be greater than 0");
         }
-        
     }
-    
     
     if (test != NoTest) {
         printf("test %d;rep_count %d\n", test, test_rep);
@@ -64,9 +50,16 @@ int main(int argc, char **argv)
         
         Connect(sockfd, (SA *) &servaddr, sizeof(servaddr));
         
+        // Caso modo de execução seja normal, executa função
+        // que permite que usuário interaga interativamente com
+        // o servidor.
         if (test == NoTest) {
             movie_rental_client(stdin, sockfd);
         } else {
+            // Caso modo seja de teste, passar teste pre-determinado
+            // para rodar um caso de uso.
+            // Se foi passado como parametro um rep_count > 1
+            // esse teste será feito diversas vezes sequencialmente.
             movie_rental_client_test(stdin, sockfd, test, test_rep, t1);
         }
         

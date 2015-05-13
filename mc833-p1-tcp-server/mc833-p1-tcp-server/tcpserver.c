@@ -1,11 +1,3 @@
-//
-//  movietcpsrv.c
-//  mc833-p1-tcp-server
-//
-//  Created by Marcelo M Toledo on 4/21/15.
-//  Copyright (c) 2015 mc833. All rights reserved.
-//
-
 #include "stripped_unp.h"
 #include "movie_rental_header.h"
 
@@ -29,6 +21,9 @@ int main(int argc, char **argv)
     
     Listen(listenfd, LISTENQ);
     
+    // Wrapper do unp.h que lida com os sinal SIGCHLD
+    // fazendo o processo dar um waitpid para evitar
+    // que os processos filhos se tornem zumbis.
     Signal(SIGCHLD, sig_chld);	/* must call waitpid() */
     
     for ( ; ; ) {
@@ -44,14 +39,17 @@ int main(int argc, char **argv)
                Inet_ntop(AF_INET, &cliaddr.sin_addr, buff, sizeof(buff)),
                ntohs(cliaddr.sin_port));
         
-        if ( (childpid = Fork()) == 0) {	/* child process */
+        if ( (childpid = Fork()) == 0) {	/* Processo Filho */
         
-            Close(listenfd);	/* close listening socket */
+            // Fecha o socket de escuta - processo filho
+            Close(listenfd);
         
-            movie_rental_server(connfd);	/* process the request */
+            // Processamento da Requisição
+            movie_rental_server(connfd);
             
             exit(0);
         }
-        Close(connfd);			/* parent closes connected socket */
+        // Processo pai fecha o socket - filho processa
+        Close(connfd);
     }
 }
