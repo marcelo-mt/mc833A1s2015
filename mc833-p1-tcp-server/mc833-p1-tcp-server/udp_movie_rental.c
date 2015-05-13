@@ -159,7 +159,6 @@ int numOfMoviewWithId (int sock, int id)
     clearVector(a);
     
     fgets(a, sizeof(a), file);
-    clearVector(a);
     fclose(file);
     
     putInUDPSocket(sock, a);
