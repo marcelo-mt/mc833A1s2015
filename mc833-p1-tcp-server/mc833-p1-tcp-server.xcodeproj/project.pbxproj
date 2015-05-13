@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2C6CB23D1AC8829800CBBE5F /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 2C6CB23C1AC8829800CBBE5F /* main.c */; };
+		2C82DB311B02D04000904721 /* udpserver.c in Sources */ = {isa = PBXBuildFile; fileRef = 2C82DB301B02D04000904721 /* udpserver.c */; };
+		2C82DB331B02D04E00904721 /* udpclient.c in Sources */ = {isa = PBXBuildFile; fileRef = 2C82DB321B02D04E00904721 /* udpclient.c */; };
 		2CAE0A1B1AC883B6005E313F /* movie.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CAE0A191AC883B6005E313F /* movie.c */; };
 		2CCFD24E1AE6E25E004AF3E9 /* tcpserver.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD24D1AE6E25E004AF3E9 /* tcpserver.c */; };
 		2CCFD2501AE6E388004AF3E9 /* tcpclient.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD24F1AE6E388004AF3E9 /* tcpclient.c */; };
@@ -61,6 +63,8 @@
 		2C155D551AE8E9240000780E /* ScienceFiction.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ScienceFiction.txt; sourceTree = "<group>"; };
 		2C6CB2391AC8829800CBBE5F /* mc833-p1-tcp-server */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "mc833-p1-tcp-server"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C6CB23C1AC8829800CBBE5F /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		2C82DB301B02D04000904721 /* udpserver.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = udpserver.c; sourceTree = "<group>"; };
+		2C82DB321B02D04E00904721 /* udpclient.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = udpclient.c; sourceTree = "<group>"; };
 		2CAE0A191AC883B6005E313F /* movie.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = movie.c; sourceTree = "<group>"; };
 		2CAE0A1A1AC883B6005E313F /* movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = movie.h; sourceTree = "<group>"; };
 		2CCFD24D1AE6E25E004AF3E9 /* tcpserver.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tcpserver.c; sourceTree = "<group>"; };
@@ -142,11 +146,21 @@
 				2C155D451AE8E2D70000780E /* movie_files */,
 				2CCFD25C1AE6EEE1004AF3E9 /* MovieRental */,
 				2CCFD25D1AE6EEF5004AF3E9 /* tcp */,
+				2C82DB2F1B02D02900904721 /* udp */,
 				2C6CB23C1AC8829800CBBE5F /* main.c */,
 				F9CB110A1AD9B255000939AF /* serverExample.c */,
 				F9CB110C1AD9B274000939AF /* userExample.c */,
 			);
 			path = "mc833-p1-tcp-server";
+			sourceTree = "<group>";
+		};
+		2C82DB2F1B02D02900904721 /* udp */ = {
+			isa = PBXGroup;
+			children = (
+				2C82DB301B02D04000904721 /* udpserver.c */,
+				2C82DB321B02D04E00904721 /* udpclient.c */,
+			);
+			name = udp;
 			sourceTree = "<group>";
 		};
 		2CCFD25B1AE6EED6004AF3E9 /* lib */ = {
@@ -258,9 +272,11 @@
 				2CCFD2761AE74419004AF3E9 /* wrapstdio.c in Sources */,
 				2CCFD2681AE72B00004AF3E9 /* readn.c in Sources */,
 				2CCFD2661AE72AEC004AF3E9 /* readline.c in Sources */,
+				2C82DB311B02D04000904721 /* udpserver.c in Sources */,
 				2CCFD2641AE72ABF004AF3E9 /* writen.c in Sources */,
 				2CCFD2781AE74B32004AF3E9 /* signal.c in Sources */,
 				2CCFD2741AE74344004AF3E9 /* movie_rental_client.c in Sources */,
+				2C82DB331B02D04E00904721 /* udpclient.c in Sources */,
 				2CCFD2551AE6E88C004AF3E9 /* wrapsock.c in Sources */,
 				F9CB110B1AD9B255000939AF /* serverExample.c in Sources */,
 				2CCFD24E1AE6E25E004AF3E9 /* tcpserver.c in Sources */,
