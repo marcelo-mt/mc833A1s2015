@@ -63,6 +63,18 @@ Open(const char *pathname, int oflag, mode_t mode)
 	return(fd);
 }
 
+ssize_t
+Read(int fd, void *ptr, size_t nbytes)
+{
+    ssize_t		n;
+    
+    if ( (n = read(fd, ptr, nbytes)) == -1)
+        err_sys("read error");
+    return(n);
+}
+
+
+
 pid_t
 Waitpid(pid_t pid, int *iptr, int options)
 {
@@ -71,4 +83,11 @@ Waitpid(pid_t pid, int *iptr, int options)
 	if ( (retpid = waitpid(pid, iptr, options)) == -1)
 		err_sys("waitpid error");
 	return(retpid);
+}
+
+void
+Write(int fd, void *ptr, size_t nbytes)
+{
+    if (write(fd, ptr, nbytes) != nbytes)
+        err_sys("write error");
 }

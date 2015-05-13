@@ -10,6 +10,7 @@
 		2C6CB23D1AC8829800CBBE5F /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 2C6CB23C1AC8829800CBBE5F /* main.c */; };
 		2C82DB311B02D04000904721 /* udpserver.c in Sources */ = {isa = PBXBuildFile; fileRef = 2C82DB301B02D04000904721 /* udpserver.c */; };
 		2C82DB331B02D04E00904721 /* udpclient.c in Sources */ = {isa = PBXBuildFile; fileRef = 2C82DB321B02D04E00904721 /* udpclient.c */; };
+		2C82DB351B03045500904721 /* udp_movie_rental.c in Sources */ = {isa = PBXBuildFile; fileRef = 2C82DB341B03045500904721 /* udp_movie_rental.c */; };
 		2CAE0A1B1AC883B6005E313F /* movie.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CAE0A191AC883B6005E313F /* movie.c */; };
 		2CCFD24E1AE6E25E004AF3E9 /* tcpserver.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD24D1AE6E25E004AF3E9 /* tcpserver.c */; };
 		2CCFD2501AE6E388004AF3E9 /* tcpclient.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFD24F1AE6E388004AF3E9 /* tcpclient.c */; };
@@ -65,6 +66,7 @@
 		2C6CB23C1AC8829800CBBE5F /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		2C82DB301B02D04000904721 /* udpserver.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = udpserver.c; sourceTree = "<group>"; };
 		2C82DB321B02D04E00904721 /* udpclient.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = udpclient.c; sourceTree = "<group>"; };
+		2C82DB341B03045500904721 /* udp_movie_rental.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = udp_movie_rental.c; sourceTree = "<group>"; };
 		2CAE0A191AC883B6005E313F /* movie.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = movie.c; sourceTree = "<group>"; };
 		2CAE0A1A1AC883B6005E313F /* movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = movie.h; sourceTree = "<group>"; };
 		2CCFD24D1AE6E25E004AF3E9 /* tcpserver.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tcpserver.c; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			children = (
 				2C82DB301B02D04000904721 /* udpserver.c */,
 				2C82DB321B02D04E00904721 /* udpclient.c */,
+				2C82DB341B03045500904721 /* udp_movie_rental.c */,
 			);
 			name = udp;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			files = (
 				2CAE0A1B1AC883B6005E313F /* movie.c in Sources */,
 				2CCFD2591AE6EEC0004AF3E9 /* wrapunix.c in Sources */,
+				2C82DB351B03045500904721 /* udp_movie_rental.c in Sources */,
 				2CCFD27F1AE77198004AF3E9 /* movie_rental.c in Sources */,
 				F9CB110D1AD9B274000939AF /* userExample.c in Sources */,
 				2CCFD26A1AE73148004AF3E9 /* wraplib.c in Sources */,

@@ -63,7 +63,9 @@ void     Gettimeofday(struct timeval *, void *);
 pid_t	 Fork(void);
 void     *Malloc(size_t);
 int      Open(const char *, int, mode_t);
+ssize_t  Read(int, void *, size_t);
 pid_t	 Waitpid(pid_t, int *, int);
+void     Write(int, void *, size_t);
 
 /* prototypes for our stdio wrapper functions: see {Sec errors} */
 void	 Fclose(FILE *);
@@ -77,6 +79,8 @@ void	 Bind(int, const SA *, socklen_t);
 void	 Connect(int, const SA *, socklen_t);
 void	 Listen(int, int);
 ssize_t	 Recv(int, void *, size_t, int);
+ssize_t  Recvfrom(int, void *, size_t, int, struct sockaddr *, socklen_t *);
+void     Sendto(int, const void *, size_t, int, const struct sockaddr *, socklen_t);
 int		 Socket(int, int, int);
 
 ssize_t	 Readline(int, void *, size_t);

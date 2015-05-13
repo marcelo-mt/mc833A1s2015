@@ -14,9 +14,32 @@ void clearVector(char vector[])
 /*
  Funcao criada para colocar as informacoes no socket para o usuário
  */
-void putInSocket(int socket, char text[])
+void putInPSocket(int socket, char text[])
 {
     Writen(socket, text, strlen(text));
+}
+
+SA *_pcliaddr;
+socklen_t _clilen;
+struct timeval _t1;
+void putInUDPSocket(int socket, char text[])
+{
+    struct timeval t1, t2;
+    long int       elapsedTime;
+    char           time_str[10];
+    
+    
+    t1 = _t1;
+    
+    Gettimeofday(&t2, NULL);
+    elapsedTime = (t2.tv_sec - t1.tv_sec) * 1000000;      // sec to us
+    elapsedTime += (t2.tv_usec - t1.tv_usec);   // us
+
+    snprintf(time_str, sizeof(time_str), "|%ld--\n", elapsedTime);
+    
+    strcat(text, time_str);
+    
+    Sendto(socket, text, strlen(text), 0, _pcliaddr, _clilen);
 }
 
 #pragma mark - Métodos de 'busca'
@@ -50,7 +73,7 @@ int listOfMoviesOfGenre (int sock, int genre)
             return 0;
         }
     } else{
-        putInSocket(sock, "Nao possuímos nenhum filme com este gênero.");
+        putInUDPSocket(sock, "Nao possuímos nenhum filme com este gênero.");
         return 1;
     }
     while (!feof(file)) {
@@ -59,7 +82,7 @@ int listOfMoviesOfGenre (int sock, int genre)
         clearVector(aux);
     }
     strcat(resp, "\n");
-    putInSocket(sock, resp);
+    putInUDPSocket(sock, resp);
     clearVector(resp);
     fclose(file);
     return 1;
@@ -97,7 +120,7 @@ int allTitlesAndDates (int sock)
         clearVector(a);
         
     }
-    putInSocket(sock, resp);
+    putInUDPSocket(sock, resp);
     fclose(file);
     return 1;
 }
@@ -138,8 +161,8 @@ int numOfMoviewWithId (int sock, int id)
     fgets(a, sizeof(a), file);
     clearVector(a);
     fclose(file);
-
-    putInSocket(sock, a);
+    
+    putInUDPSocket(sock, a);
     return  1;
     
 }
@@ -221,7 +244,7 @@ int infoOfMovie (int id, int sock)
             return 0;
         }
         strcat(movie, "\n");
-        putInSocket(sock, movie);
+        putInUDPSocket(sock, movie);
         clearVector(movie);
     }
     fclose(file);
@@ -239,7 +262,7 @@ int allInfo (int sock)
         clearVector(aux);
     }
     
-    putInSocket(sock, resp);
+    putInUDPSocket(sock, resp);
     return 1;
     
     
@@ -263,9 +286,9 @@ int synopsisOfMovie (int id, int sock)
             fgets(movie, sizeof(movie), file);
             strcat(resp, movie);
         }
-        putInSocket(sock, resp);
+        putInUDPSocket(sock, resp);
     }
-    putInSocket(sock, "\n");
+    putInUDPSocket(sock, "\n");
     fclose(file);
     return 1;
 }
@@ -326,34 +349,39 @@ int editDisponibilityOfMovie(int id, int sock, int newDisp)
 
 #pragma mark - Action Routing
 
-void execute_action_with_request(int sockfd, MovieRentalRequest *request)
+void execute_udp_action_with_request(int sockfd, MovieRentalRequest *request, SA *pcliaddr, socklen_t clilen, struct timeval t1)
 {
+    
+    _pcliaddr = pcliaddr;
+    _clilen = clilen;
+    _t1 = t1;
+    
     switch (request->action) {
-        case MovieRentalActionListTitleYear:
+        case MovieRentalActionListTitleYear: //0
             list_all_title_year(sockfd);
             break;
-        case MovieRentalActionListTitleYearGenre:
+        case MovieRentalActionListTitleYearGenre: //1
             list_all_title_year_bygenre(sockfd, (MovieGenre)request->parameter1);
             break;
-        case MovieRentalActionGetSynopsis:
+        case MovieRentalActionGetSynopsis: //2
             get_synopsis_by_id(sockfd, request->parameter1);
             break;
-        case MovieRentalActionGetCompleteInfo:
+        case MovieRentalActionGetCompleteInfo: //3
             get_info_by_id(sockfd, request->parameter1);
             break;
-        case MovieRentalActionListAllCompleteInfo:
+        case MovieRentalActionListAllCompleteInfo: //4
             list_all_complete(sockfd);
             break;
-        case MovieRentalActionSetQuantity:
+        case MovieRentalActionSetQuantity: //5
             set_quantity_for_id(sockfd, request->parameter1, request->parameter2);
             break;
-        case MovieRentalActionGetQuantity:
+        case MovieRentalActionGetQuantity: //6
             get_quantity_by_id(sockfd, request->parameter1);
             break;
         default:
             
             // UNKNOWN ACTION
-            Writen(sockfd, "Unknown Action", sizeof("Unknown Action"));
+            putInUDPSocket(sockfd, "Unknown Action");
             
             break;
     }
@@ -369,7 +397,7 @@ void send_to_socket(int sockfd, char msg[MAXLINE])
 
 void list_all_title_year(int sockfd)
 {
-
+    
     allTitlesAndDates(sockfd);
 }
 

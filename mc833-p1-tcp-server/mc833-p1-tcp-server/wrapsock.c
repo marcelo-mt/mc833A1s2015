@@ -76,6 +76,25 @@ Recv(int fd, void *ptr, size_t nbytes, int flags)
 	return(n);
 }
 
+ssize_t
+Recvfrom(int fd, void *ptr, size_t nbytes, int flags,
+         struct sockaddr *sa, socklen_t *salenptr)
+{
+    ssize_t		n;
+    
+    if ( (n = recvfrom(fd, ptr, nbytes, flags, sa, salenptr)) < 0)
+        err_sys("recvfrom error");
+    return(n);
+}
+
+void
+Sendto(int fd, const void *ptr, size_t nbytes, int flags,
+       const struct sockaddr *sa, socklen_t salen)
+{
+    if (sendto(fd, ptr, nbytes, flags, sa, salen) != nbytes)
+        err_sys("sendto error");
+}
+
 /* include Socket */
 int
 Socket(int family, int type, int protocol)

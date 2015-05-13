@@ -3,6 +3,8 @@
 
 #include <stdio.h>
 
+#include "stripped_unp.h"
+
 /**
  Enum definindo alguns gêneros de filme
  */
@@ -75,6 +77,9 @@ typedef struct _request {
  passando os parâmetros da maneira correta.
  */
 void execute_action_with_request(int sockfd, MovieRentalRequest *request);
+
+
+void execute_udp_action_with_request(int sockfd, MovieRentalRequest *request, SA *pcliaddr, socklen_t clilen, struct timeval t1);
 
 /**
  Função associada à Action MovieRentalActionListTitleYear.
